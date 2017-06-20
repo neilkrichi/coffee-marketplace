@@ -34,10 +34,10 @@ class App extends Component {
         </Navbar>
       <div className="App">
         <div className="App-header">
-          <h1 className="App-logo">☕️</h1>
+          <h1 className="App-logo"><span role='img'>☕️</span></h1>
           <h2>Welcome to Cough-E</h2>
             <p className="App-intro">
-              Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> ☕️ Coffee ☕️  </strong> marketplace
+              Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
             </p>
         </div>
       </div>

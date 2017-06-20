@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Button, Modal, FormGroup, FormControl, ControlLabel, HelpBlock} from 'react-bootstrap';
 
 class SignUpButton extends React.Component {
   constructor(props) {
@@ -7,13 +7,15 @@ class SignUpButton extends React.Component {
     this.state = {
       showModal: false,
       email:'',
-      password: ''
+      password: '',
     };
 
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
     this.cancel = this.cancel.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   open() {
@@ -39,13 +41,12 @@ class SignUpButton extends React.Component {
     else if (length > 0) return 'error';
   }
 
-  handleChange(e) {
-    this.setState({ email: e.target.value, password: e.target.value });
-
+  handleInputChange(event) {
+    this.setState({[event.target.name]: event.target.value});
   }
 
   handleSubmit(event) {
-   alert('Nigga we made it!');
+   alert('Nigga we made it! Here are your credentials ' + this.state.email + " " + this.state.password);
    event.preventDefault();
  }
 
@@ -61,19 +62,23 @@ class SignUpButton extends React.Component {
           <Modal.Body>
             <FormGroup>
               <ControlLabel>E-mail</ControlLabel>
-              <FormControl type="text"
-                value={this.state.value}
+              <FormControl type="email"
+                name='email'
+                value={this.state.email}
                 placeholder="Enter your email"
-                onChange={this.handleChange}
+                onChange={this.handleInputChange}
               />
             </FormGroup>
             <FormGroup validationState={this.getValidationState()}>
               <ControlLabel>Password</ControlLabel>
               <FormControl type="password"
-                value={this.state.value}
+                name='password'
+                value={this.state.password}
                 placeholder="Choose a password"
-                onChange={this.handleChange}
-              />
+                onChange={this.handleInputChange}/>
+              <FormControl.Feedback />
+              <HelpBlock>Validation is based on string length.</HelpBlock>
+
 
             </FormGroup>
           </Modal.Body>
