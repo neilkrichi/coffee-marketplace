@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
+import classnames from 'classnames';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 import logo from './logo.svg';
-import './App.css';
+import './index.css';
 import SignUpButton from './SignUpButton.js';
+
 
 
 class App extends Component {
   render() {
+    const { className, ...props } = this.props;
     return (
       <div>
         <Navbar inverse collapseOnSelect>
@@ -32,7 +35,7 @@ class App extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      <div className="App">
+      <div className={classnames('App', className)} {...props}>
         <div className="App-header">
           <h1 className="App-logo"><span role='img'>☕️</span></h1>
           <h2>Welcome to Cough-E</h2>
