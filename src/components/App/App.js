@@ -2,8 +2,9 @@ import React, { PropTypes, Component } from 'react';
 import classnames from 'classnames';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 import logo from './logo.svg';
-import './index.css';
+import './style.css';
 import SignUpButton from './SignUpButton.js';
+import {browserHistory, Link} from 'react-router';
 
 
 
@@ -29,9 +30,9 @@ class App extends Component {
               <NavItem eventKey={3} href="#">Blog</NavItem>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={2} href="#">Sell on Cough-E</NavItem>
-              <NavItem eventKey={1} href="#"><SignUpButton/></NavItem>
-              <NavItem eventKey={2} href="#" className="sign-in">Sign In</NavItem>
+              <NavItem eventKey={2} href="#"><Link to='/sell'><button bsStyle="primary" bsSize="medium" className="">Sell on Cough-E</button></Link></NavItem>
+              <NavItem eventKey={1} href="#"><Link to='/signup'><button bsStyle="primary" bsSize="medium" className="">Sign Up</button></Link></NavItem>
+              <NavItem eventKey={2} href="#"><Link to='/signup'><button bsStyle="primary" bsSize="medium" className="">Log In</button></Link></NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

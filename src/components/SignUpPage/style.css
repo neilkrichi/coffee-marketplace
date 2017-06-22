@@ -1,0 +1,14 @@
+.error input{
+  outline: none;
+  border-color: red;
+}
+
+.warning input{
+  outline: none;
+  border-color: orange;
+}
+
+.success input{
+  outline: none;
+  border-color: green;
+}
