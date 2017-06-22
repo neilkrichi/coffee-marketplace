@@ -1,8 +1,4 @@
-import React, { PropTypes, Component } from 'react';
-import classnames from 'classnames';
-import {browserHistory, Link} from 'react-router'
-
-
+import { React, Component } from 'react';
 import './style.css';
 
 export default class SignUpPage extends Component {
@@ -71,9 +67,8 @@ export default class SignUpPage extends Component {
   }
 
   render() {
-    const { className, ...props } = this.props;
     return (
-      <div className={classnames('SignUp', className)} {...props}>
+      <div className='SignUp'>
         <h1>
           Sign up
         </h1>
