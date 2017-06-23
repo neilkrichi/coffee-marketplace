@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import classnames from 'classnames';
 import {browserHistory, Link} from 'react-router'
 
 
@@ -58,7 +57,6 @@ export default class LoginPage extends Component {
   }
 
   render() {
-    const { className, ...props } = this.props;
     return (
       <div className='SignUp'>
         <h1>

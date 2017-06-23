@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import classnames from 'classnames';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 import logo from './logo.svg';
 import './style.css';
@@ -10,7 +9,6 @@ import SearchBar from '../../containers/SearchBar/SearchBar.js';
 
 class App extends Component {
   render() {
-    const { className, ...props } = this.props;
     return (
       <div>
       <div className='App'>
