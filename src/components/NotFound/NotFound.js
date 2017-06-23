@@ -1,15 +1,20 @@
 // src/components/NotFound/index.js
-import { React, Component } from 'react';
+import React, { PropTypes, Component } from 'react';
+import classnames from 'classnames';
 
 import './style.css';
 
 export default class NotFound extends Component {
+  // static propTypes = {}
+  // static defaultProps = {}
+  // state = {}
 
   render() {
+    const { className, ...props } = this.props;
     return (
       <div className='NotFound'>
         <h1>
-          404 <small>Not Found <span role='img' aria-label='sad-emoji'>😭</span></small>
+          404 <small>Not Found 😭</small>
         </h1>
       </div>
     );

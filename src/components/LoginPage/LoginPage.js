@@ -1,4 +1,6 @@
-import { React, Component } from 'react';
+import React, { PropTypes, Component } from 'react';
+import classnames from 'classnames';
+import {browserHistory, Link} from 'react-router'
 
 
 import './style.css';
@@ -56,8 +58,9 @@ export default class LoginPage extends Component {
   }
 
   render() {
+    const { className, ...props } = this.props;
     return (
-      <div className='Login'>
+      <div className='SignUp'>
         <h1>
           Log in
         </h1>
@@ -78,7 +81,6 @@ export default class LoginPage extends Component {
               onChange={this.handleInputChange}/>
             {this.renderPasswordError()}
           </div>
-
           <button type="submit">
             Sign me up
           </button>
