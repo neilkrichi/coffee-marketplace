@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './style.css';
 import {browserHistory, Link} from 'react-router';
 import SearchBar from '../../containers/SearchBar/SearchBar.js';
+import CreateButton from '../../containers/SearchBar/SearchBar.js';
 
 
 

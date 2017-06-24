@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Button, Modal, } from 'react-bootstrap';
 import Dropzone from 'react-dropzone';
 
