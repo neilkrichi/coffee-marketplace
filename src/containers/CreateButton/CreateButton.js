@@ -1,28 +1,29 @@
 import React from 'react';
 import ReactFilepicker from 'react-filepicker';
 import Collapsible from 'react-collapsible';
-import axios from 'axios'
-
+import axios from 'axios';
+import filepickerLibrary from 'filepicker-js';
 import './CreateButton.css';
+
+let filepicker = window.filepicker
+
+filepicker.setKey('AFsy23APnSR63IRmWVWlGz');
 
 
 export default class CreateButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
       name:'',
-      tasteTone: '',
+      tasteTone: 'Bitter',
       description: '',
-      img: ''
+      imgUrl: '',
     };
 
-    this.open = this.open.bind(this);
-    this.close = this.close.bind(this);
-    this.cancel = this.cancel.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.pickFile = this.pickFile.bind(this);
+    this.hideImg = this.hideImg.bind(this);
   }
 
   addCoffee(){
@@ -30,8 +31,8 @@ export default class CreateButton extends React.Component {
     let coffeeData = {
       name: this.state.name,
       description: this.state.description,
-      tones: this.state.tones,
-      img: this.state.img
+      tones: this.state.tasteTone,
+      img: this.state.imgUrl
     }
 
 
@@ -47,34 +48,28 @@ export default class CreateButton extends React.Component {
       });
   }
 
-  open() {
-    this.setState( {
-      showModal: true,
-
-    });
-  }
-  close() {
-    this.setState( { showModal: false } );
-  }
-
-
-  cancel() {
-    this.close();
-  }
-
   handleInputChange(event) {
     this.setState({[event.target.name]: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-   alert('Awesome! You created ' + this.state.name);
-   this.addCoffee()
+    this.addCoffee()
  }
 
-  onDrop(acceptedFiles, rejectedFiles) {
-  // do stuff with files...
-  }
+ pickFile(){
+   filepicker.pick(
+     (Blob) => {
+      this.setState({imgUrl: Blob.url});
+     }
+   )
+ }
+
+ hideImg(){
+   if (this.state.imgUrl === ''){
+     return ("hide")
+   }
+ }
 
   render() {
     return (
@@ -98,12 +93,12 @@ export default class CreateButton extends React.Component {
 
             <div>
               <label>Taste tone</label> <br></br>
-              <select>
-                <option value="bitter">Bitter</option>
-                <option value="sweet">Sweet</option>
-                <option selected value="fruit notes">Fruit notes</option>
-                <option value="flower notes">Flower notes</option>
-                <option value="herbal notes">Herbal notes</option>
+              <select name='tasteTone' value={this.state.tasteTone} onChange={this.handleInputChange}>
+                <option tasteTone="bitter">Bitter</option>
+                <option tasteTone="sweet">Sweet</option>
+                <option tasteTone="fruit notes">Fruit notes</option>
+                <option tasteTone="flower notes">Flower notes</option>
+                <option tasteTone="herbal notes">Herbal notes</option>
               </select>
             </div>
 
@@ -112,19 +107,18 @@ export default class CreateButton extends React.Component {
               <textarea name='description'
                 placeholder="Describe your product in a few sentences..."
                 rows="5"
-                onChange={this.handleInputChange}>
-                {this.state.description}
-              </textarea>
+                onChange={this.handleInputChange}
+                value={this.state.description}> </textarea>
             </div>
 
             <div className="img">
               <label>Insert a picture of your product <small>(Optional)</small></label>
-                <br></br>
-              <ReactFilepicker
-                apikey='AFsy23APnSR63IRmWVWlGz'
-                defaultWidget={false}
-                onSuccess={this.close} />
+              <br></br>
+              <button onClick={this.pickFile}>Choose your img</button>
+              <br></br>
+              <img className={this.hideImg()} src={this.state.imgUrl} height="100" width="150" />
             </div>
+
             <input type="submit" value="Submit" onClick={this.handleSubmit} />
           </form>
         </Collapsible>

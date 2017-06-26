@@ -7,7 +7,6 @@ import NotFound from './components/NotFound/NotFound.js';
 import SignUpPage from './components/SignUpPage/SignUpPage.js';
 import LoginPage from './components/LoginPage/LoginPage.js';
 import SellLandingPage from './components/SellLandingPage/SellLandingPage.js';
-
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { Router, Route, browserHistory } from 'react-router';
