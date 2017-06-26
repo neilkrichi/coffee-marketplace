@@ -1,10 +1,9 @@
-import React, { PropTypes, Component } from 'react';
-import { Button, Modal, } from 'react-bootstrap';
-import Dropzone from 'react-dropzone';
+import React from 'react';
 import ReactFilepicker from 'react-filepicker';
 import Collapsible from 'react-collapsible';
+import axios from 'axios'
 
-import './style.css';
+import './CreateButton.css';
 
 
 export default class CreateButton extends React.Component {
@@ -14,7 +13,8 @@ export default class CreateButton extends React.Component {
       showModal: false,
       name:'',
       tasteTone: '',
-      description: ''
+      description: '',
+      img: ''
     };
 
     this.open = this.open.bind(this);
@@ -23,6 +23,28 @@ export default class CreateButton extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
+  }
+
+  addCoffee(){
+
+    let coffeeData = {
+      name: this.state.name,
+      description: this.state.description,
+      tones: this.state.tones,
+      img: this.state.img
+    }
+
+
+    console.log(coffeeData)
+
+    // pass the actual values to make this POST CALL
+    return axios.post('https://cocoapi.herokuapp.com/add/coffee', coffeeData)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   open() {
@@ -45,8 +67,9 @@ export default class CreateButton extends React.Component {
   }
 
   handleSubmit(event) {
-   alert('Awesome! You created ' + this.name);
-   event.preventDefault();
+    event.preventDefault();
+   alert('Awesome! You created ' + this.state.name);
+   this.addCoffee()
  }
 
   onDrop(acceptedFiles, rejectedFiles) {
@@ -55,7 +78,7 @@ export default class CreateButton extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="sell">
 
     {/*    <button onClick={this.open}>
           Add a product:

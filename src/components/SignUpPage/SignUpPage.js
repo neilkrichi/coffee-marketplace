@@ -1,8 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import {browserHistory, Link} from 'react-router'
+import React, { Component } from 'react';
 
-
-import './style.css';
+import './SignUpPage.css';
 
 export default class SignUpPage extends Component {
   constructor(props) {
@@ -82,7 +80,7 @@ export default class SignUpPage extends Component {
           <input type="text" placeholder="Doe"/>
           <div className={this.state.emailError}>
             <label>Email </label>
-            <input name='email'
+            <input type ='text' name='email'
               onBlur={this.validateEmail}
               value={this.state.email}
               placeholder="example@email.com"
@@ -108,9 +106,7 @@ export default class SignUpPage extends Component {
               onChange={this.handleInputChange}/>
             {this.validatePassword()}
           </div>
-          <button type="submit">
-            Sign me up
-          </button>
+          <input type="submit" onClick={this.handleSubmit} />
         </form>
       </div>
     );

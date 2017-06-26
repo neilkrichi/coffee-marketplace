@@ -1,10 +1,8 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
-import logo from './logo.svg';
 import './style.css';
-import {browserHistory, Link} from 'react-router';
+import { Link } from 'react-router';
 import SearchBar from '../../containers/SearchBar/SearchBar.js';
-import CreateButton from '../../containers/SearchBar/SearchBar.js';
 
 
 
@@ -23,7 +21,7 @@ class App extends Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={1} href="#"><Link to='/about'>How it works</Link></NavItem>
+                <NavItem eventKey={1}><Link to='/about'>How it works</Link></NavItem>
                 <NavDropdown eventKey={2} title="What we sell" id="basic-nav-dropdown">
                   <MenuItem eventKey={2.1}>Coffee beans</MenuItem>
                   <MenuItem eventKey={2.2}>Ground coffee</MenuItem>
