@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactFilepicker from 'react-filepicker';
 import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
