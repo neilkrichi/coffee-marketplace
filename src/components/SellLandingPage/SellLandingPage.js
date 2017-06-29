@@ -1,6 +1,6 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
-import CreateButton from '../../containers/CreateButton/CreateButton.js'
+import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js'
 import './style.css';
 
 export default class SellLandingPage extends Component {
@@ -12,7 +12,7 @@ export default class SellLandingPage extends Component {
         <h1>
           Sell on Cough-E
         </h1>
-        <CreateButton />
+        <CreateCoffeeForm />
       </div>
     );
   }

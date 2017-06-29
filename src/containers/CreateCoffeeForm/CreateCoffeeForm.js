@@ -2,14 +2,14 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
-import './CreateButton.css';
+import './CreateCoffeeForm.css';
 
 let filepicker = window.filepicker
 
 filepicker.setKey('AFsy23APnSR63IRmWVWlGz');
 
 
-export default class CreateButton extends React.Component {
+export default class CreateCoffeeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
