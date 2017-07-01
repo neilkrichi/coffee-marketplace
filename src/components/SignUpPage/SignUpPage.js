@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './SignUpPage.css';
+import '../../stylesheets/style.css';
 
 export default class SignUpPage extends Component {
   constructor(props) {

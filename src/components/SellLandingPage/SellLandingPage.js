@@ -1,7 +1,7 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js'
-import './style.css';
+import '../../stylesheets/style.css';
 
 export default class SellLandingPage extends Component {
 

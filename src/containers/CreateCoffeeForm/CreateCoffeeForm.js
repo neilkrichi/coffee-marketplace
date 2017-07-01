@@ -2,7 +2,9 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
-import './CreateCoffeeForm.css';
+import '../../stylesheets/style.css';
+import { Link } from 'react-router';
+
 
 let filepicker = window.filepicker
 
@@ -117,7 +119,7 @@ export default class CreateCoffeeForm extends React.Component {
               <br></br>
               <img className={this.hideImg()} src={this.state.imgUrl} height="100" width="150" />
             </div>
-
+            <button type="submit" value="Submit" onClick={this.handleSubmit}><Link to='/home'>Submit</Link></button>
             <input type="submit" value="Submit" onClick={this.handleSubmit} />
           </form>
         </Collapsible>
