@@ -1,6 +1,5 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
-import {} from 'react-bootstrap';
 import '../../stylesheets/style.css';
 
 export default class About extends Component {

@@ -12,7 +12,7 @@ class App extends Component {
       <div>
       <div className='App'>
         <div className="App-header">
-          <Navbar inverse collapseOnSelect>
+          <Navbar collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
                 <a href="#">Cough-E</a>
@@ -26,7 +26,6 @@ class App extends Component {
                   <MenuItem eventKey={2.1}>Coffee beans</MenuItem>
                   <MenuItem eventKey={2.2}>Ground coffee</MenuItem>
                 </NavDropdown>
-                <NavItem eventKey={3} href="#">Blog</NavItem>
               </Nav>
               <Nav pullRight>
                 <NavItem eventKey={2} href="#"><Link to='/sell'><button bsStyle="primary" bsSize="medium" className="">Sell on Cough-E</button></Link></NavItem>

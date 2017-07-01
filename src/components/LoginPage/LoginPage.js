@@ -55,13 +55,13 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div className='SignUp'>
+      <div className='LoginPage'>
         <h1>
           Log in
         </h1>
         <form onSubmit={this.handleSubmit}>
           <div className={this.state.emailError}>
-            <input name='email'
+            <input type='text' name='email'
               onBlur={this.validateEmail}
               value={this.state.email}
               placeholder="Enter your email"

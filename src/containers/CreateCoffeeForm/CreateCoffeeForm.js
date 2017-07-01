@@ -120,7 +120,6 @@ export default class CreateCoffeeForm extends React.Component {
               <img className={this.hideImg()} src={this.state.imgUrl} height="100" width="150" />
             </div>
             <button type="submit" value="Submit" onClick={this.handleSubmit}><Link to='/home'>Submit</Link></button>
-            <input type="submit" value="Submit" onClick={this.handleSubmit} />
           </form>
         </Collapsible>
       </div>
