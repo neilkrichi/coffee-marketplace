@@ -1,6 +1,8 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 import '../../stylesheets/style.css';
+
 
 export default class ListingPage extends Component {
   // static propTypes = {}
@@ -13,7 +15,10 @@ export default class ListingPage extends Component {
         <h1>
           Listings
         </h1>
-
+        <FontAwesome
+          className='checkmark'
+          name='check'
+        />
       </div>
     );
   }

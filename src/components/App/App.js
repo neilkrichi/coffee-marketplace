@@ -22,8 +22,8 @@ class App extends Component {
             <Navbar.Collapse>
               <Nav>
                 <NavItem eventKey={1}><Link to='/about'>How it works</Link></NavItem>
-                <NavDropdown eventKey={2} title="What we sell" id="basic-nav-dropdown">
-                  <MenuItem eventKey={2.1}>Coffee beans</MenuItem>
+                <NavDropdown eventKey={2} title="Discover" id="basic-nav-dropdown">
+                  <MenuItem eventKey={2.1}><Link to='/listings'>Coffee beans</Link></MenuItem>
                   <MenuItem eventKey={2.2}>Ground coffee</MenuItem>
                 </NavDropdown>
               </Nav>

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/style.css';
 
-export default class About extends Component {
+export default class CoffeeListing extends Component {
   // static propTypes = {}
   // static defaultProps = {}
   // state = {}
