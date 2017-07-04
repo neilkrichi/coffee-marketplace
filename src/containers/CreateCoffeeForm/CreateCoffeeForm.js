@@ -37,8 +37,6 @@ export default class CreateCoffeeForm extends React.Component {
     }
 
 
-    console.log(coffeeData)
-
     // pass the actual values to make this POST CALL
     return axios.post('https://cocoapi.herokuapp.com/add/coffee', coffeeData)
       .then(function (response) {
@@ -48,6 +46,7 @@ export default class CreateCoffeeForm extends React.Component {
         console.log(error);
       });
   }
+
 
   handleInputChange(event) {
     this.setState({[event.target.name]: event.target.value});
