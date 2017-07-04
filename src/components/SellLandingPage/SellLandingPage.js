@@ -8,7 +8,7 @@ export default class SellLandingPage extends Component {
 
   render() {
     return (
-      <div className='About'>
+      <div className='container sell'>
         <h1>
           Sell on Cough-E
         </h1>

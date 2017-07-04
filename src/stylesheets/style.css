@@ -37,19 +37,22 @@ a {
   to { transform: rotate(270deg); }
 }
 
-.error input{
+.signup .error input, .login .error input{
   outline: none;
-  border-color: red;
+  border-color: #E70A00;
+  border-width: 2px;
 }
 
-.warning input{
+.signup .warning input, .login .warning input{
   outline: none;
-  border-color: orange;
+  border-color: #FA8000;
+  border-width: 2px;
 }
 
-.success input{
+.signup .success input, .login .success input{
   outline: none;
-  border-color: green;
+  border-color: #00AB1C;
+  border-width: 2px;
 }
 
 
@@ -78,7 +81,7 @@ a {
   background-color: #eee;
 }
 
- input[type=text], input[type=password], textarea, select {
+input[type=text], input[type=password], textarea, select {
     width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -89,7 +92,7 @@ a {
     border-style: solid;
 }
 
-input[type=submit], button[type=submit] {
+.signup input[type=submit], .signup button[type=submit], .login input[type=submit], .login button[type=submit] {
     width: 20%;
     background-color: #0076FF;
     color: white;

@@ -18,8 +18,8 @@ export default class LoginPage extends Component {
 
   getValidationState() {
     const length = this.state.password.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
+    if (length > 8) return 'success';
+    else if (length > 4) return 'warning';
     else if (length > 0) return 'error';
   }
 
@@ -55,7 +55,7 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div className='LoginPage'>
+      <div className='container login'>
         <h1>
           Log in
         </h1>

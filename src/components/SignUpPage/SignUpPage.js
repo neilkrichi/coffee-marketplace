@@ -29,8 +29,8 @@ export default class SignUpPage extends Component {
 
   getValidationState() {
     const length = this.state.password.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
+    if (length > 8) return 'success';
+    else if (length > 4) return 'warning';
     else if (length > 0) return 'error';
   }
 
@@ -69,17 +69,17 @@ export default class SignUpPage extends Component {
 
   render() {
     return (
-      <div className='SignUp'>
+      <div className='container signup'>
         <h1>
           Sign up
         </h1>
         <form onSubmit={this.handleSubmit}>
-          <label>First name </label>
+          <label>First name </label> <br/>
           <input type="text" placeholder="John"/> <br></br>
-          <label>Last name</label>
+          <label>Last name</label><br/>
           <input type="text" placeholder="Doe"/>
           <div className={this.state.emailError}>
-            <label>Email </label>
+            <label>Email </label><br/>
             <input type ='text' name='email'
               onBlur={this.validateEmail}
               value={this.state.email}
@@ -88,7 +88,7 @@ export default class SignUpPage extends Component {
           </div>
 
           <div className={this.getValidationState()}>
-            <label>Password </label>
+            <label>Password </label><br/>
             <input name='password'
               type='password'
               value={this.state.password}
@@ -98,7 +98,7 @@ export default class SignUpPage extends Component {
           </div>
 
           <div className=''>
-            <label>Confirm Password </label>
+            <label>Confirm Password </label><br/>
             <input name='passwordConfirmation'
               type='password'
               value={this.state.passwordConfirmation}

@@ -2,16 +2,16 @@
 import React, { Component } from 'react';
 import '../../stylesheets/style.css';
 
-export default class About extends Component {
+export default class Blog extends Component {
   // static propTypes = {}
   // static defaultProps = {}
   // state = {}
 
   render() {
     return (
-      <div className='About'>
+      <div className='container blog'>
         <h1>
-          About
+          Blog
         </h1>
       </div>
     );
