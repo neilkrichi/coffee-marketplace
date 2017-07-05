@@ -16,9 +16,10 @@ export default class CreateCoffeeForm extends React.Component {
     super(props);
     this.state = {
       name:'',
-      tasteTone: 'Bitter',
+      tasteTone: 'Select a tone',
+      roastingLevel: 'Select a roasting level',
       description: '',
-      imgUrl: '',
+      imgUrl: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -103,6 +104,18 @@ export default class CreateCoffeeForm extends React.Component {
             </div>
 
             <div>
+              <label>Roasting Level</label> <br></br>
+              <select name='roastingLevel' value={this.state.roastingLevel} onChange={this.handleInputChange}>
+                <option roastingLevel="light">Light</option>
+                <option roastingLevel="medium">Medium</option>
+                <option roastingLevel="medium dark">Medium Dark</option>
+                <option roastingLevel="dark">Dark</option>
+                <option roastingLevel="darker">Darker</option>
+                <option roastingLevel="very dark">Very dark</option>
+              </select>
+            </div>
+
+            <div>
               <label>Description</label> <br></br>
               <textarea name='description'
                 placeholder="Describe your product in a few sentences..."
@@ -116,7 +129,7 @@ export default class CreateCoffeeForm extends React.Component {
               <br></br>
               <button onClick={this.pickFile}>Choose your img</button>
               <br></br>
-              <img className={this.hideImg()} src={this.state.imgUrl} height="100" width="150" />
+              <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'100%', height:'auto'}} />
             </div>
             <button type="submit" value="Submit" onClick={this.handleSubmit}><Link to='/home'>Submit</Link></button>
           </form>

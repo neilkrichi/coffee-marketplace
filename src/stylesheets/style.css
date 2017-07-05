@@ -114,3 +114,11 @@ img.hide {
 .listings .checkmark {
   padding: 30px;
 }
+
+.coffee-listing {
+  border: 1px solid black;
+}
+.coffee-listing img {
+  width: 100%;
+  height: auto;
+}

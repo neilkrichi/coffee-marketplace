@@ -11,7 +11,8 @@ import '../../stylesheets/style.css';
 
 export default class ListingPage extends Component {
 
-componentDidMount(){
+
+componentWillMount(){
     this.getCoffees();
 }
 
