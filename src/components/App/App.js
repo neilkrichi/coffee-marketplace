@@ -12,12 +12,11 @@ class App extends Component {
       <div className='app'>
         <Navibar />
         <div className="app-header">
-
           <h1 className="app-logo"><span role='img'>☕️</span></h1>
-          <h2>Welcome to Roastr</h2>
-            <p className="app-intro">
+          <h1>Welcome to Roastr</h1> <br/>
+            <h3 className="app-intro">
               Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
-            </p>
+            </h3> <br/>
             <SearchBar />
 
         </div>

@@ -27,9 +27,9 @@ export default class Navibar extends Component {
               <NavItem eventKey={2}><Link to='/blog'>Blog</Link></NavItem>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={3} href="#"><Link to='/sell'><button bsStyle="primary" bsSize="medium" className="">Sell on Roastr</button></Link></NavItem>
-              <NavItem eventKey={4} href="#"><Link to='/signup'><button bsStyle="primary" bsSize="medium" className="">Sign Up</button></Link></NavItem>
-              <NavItem eventKey={5} href="#"><Link to='/login'><button bsStyle="primary" bsSize="medium" className="">Log In</button></Link></NavItem>
+              <NavItem eventKey={3} href="#"><Link to='/sell'>Sell on Roastr</Link></NavItem>
+              <NavItem eventKey={4} href="#"><Link to='/signup'>Sign Up</Link></NavItem>
+              <NavItem eventKey={5} href="#"><Link to='/login'>Log In</Link></NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

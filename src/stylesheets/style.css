@@ -10,16 +10,26 @@
   height: 50px;
 }
 
+.app-header h1 {
+  font-size: 40px;
+}
+
 .app-header {
   background-color: #993A22;
-  color: white;
-  height: 300px;
-  padding-top: 20px;
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 1.2em;
+  height: 700px;
+  padding-top: 170px;
+  background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
 }
 
 .app-intro {
-  font-size: large;
-  color: white
+  font-size: 1em;
 }
 
 .navbar {

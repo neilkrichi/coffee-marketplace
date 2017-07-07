@@ -65,7 +65,6 @@ componentWillMount(){
         </Row>
 
       <hr />
-        <CreateCoffeeForm />
         </div>
       </div>
     );
