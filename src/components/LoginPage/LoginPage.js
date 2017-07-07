@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../stylesheets/style.css';
+import Navibar from '../../containers/Navibar/Navibar.js';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -55,31 +56,34 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div className='container login'>
-        <h1>
-          Log in
-        </h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className={this.state.emailError}>
-            <input type='text' name='email'
-              onBlur={this.validateEmail}
-              value={this.state.email}
-              placeholder="Enter your email"
-              onChange={this.handleInputChange}/>
-          </div>
+      <div className='login'>
+        <Navibar />
+        <div className='container'>
+          <h1>
+            Log in
+          </h1>
+          <form onSubmit={this.handleSubmit}>
+            <div className={this.state.emailError}>
+              <input type='text' name='email'
+                onBlur={this.validateEmail}
+                value={this.state.email}
+                placeholder="Enter your email"
+                onChange={this.handleInputChange}/>
+            </div>
 
-          <div className={this.getValidationState()}>
-            <input name='password'
-              type='password'
-              value={this.state.password}
-              placeholder="Enter your password"
-              onChange={this.handleInputChange}/>
-            {this.renderPasswordError()}
-          </div>
-          <button type="submit">
-            Sign me up
-          </button>
-        </form>
+            <div className={this.getValidationState()}>
+              <input name='password'
+                type='password'
+                value={this.state.password}
+                placeholder="Enter your password"
+                onChange={this.handleInputChange}/>
+              {this.renderPasswordError()}
+            </div>
+            <button type="submit">
+              Sign me up
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

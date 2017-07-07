@@ -13,6 +13,7 @@ export default class Blog extends Component {
         <h1>
           Blog
         </h1>
+        <hr />
       </div>
     );
   }

@@ -25,13 +25,15 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-      <label>
-       Fancy some coffee?
-      <input type="text" name='query' value={this.state.query} onChange={this.handleInputChange}/>
-      </label>
-      <input type="submit" value="Submit" />
+      <div className='searchbar'>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Fancy some coffee? <br/>
+          <input type="text" name='query' value={this.state.query} onChange={this.handleInputChange}/>
+        </label>
+        <input type="submit" value="Submit" />
       </form>
-    );
-  }
+    </div>
+  );
+}
 }

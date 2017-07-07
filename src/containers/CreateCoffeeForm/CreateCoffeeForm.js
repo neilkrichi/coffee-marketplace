@@ -74,7 +74,7 @@ export default class CreateCoffeeForm extends React.Component {
 
   render() {
     return (
-      <div className="sell">
+      <div className="create-form">
 
     {/*    <button onClick={this.open}>
           Add a product:

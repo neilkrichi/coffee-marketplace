@@ -1,26 +1,29 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 1s linear;
+.app-logo {
+  animation: app-logo-spin infinite 1s linear;
   height: 50px;
 }
 
-.App-header {
-  background-color: #999;
-  height: 300px;
-  padding: 20px;
+.app-header {
+  background-color: #993A22;
   color: white;
+  height: 300px;
 }
 
-.App-intro {
+.app-intro {
   font-size: large;
   color: white
 }
 
 .navbar {
-  margin: 0px;
+  background-color: #692812;
+  border: none;
+  border-radius: 0;
+  padding: 10px;
+  margin-bottom: -20px;
 }
 
 .sign-in {
@@ -32,7 +35,7 @@ a {
   color: #999;
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
   from { transform: rotate(-90deg); }
   to { transform: rotate(270deg); }
 }
@@ -56,24 +59,26 @@ a {
 }
 
 
-.Collapsible {
+.create-form .Collapsible {
   border: #222 solid;
   padding: 10px 40px;
   margin: 10px 30px;
   text-align: center;
   max-width: 700px;
+  display: block;
+  margin: auto;
 
 }
 
-.Collapsible .description {
+.create-form .Collapsible .description {
   font-size: 1.3em;
 }
 
-.Collapsible .info {
+.create-form .Collapsible .info {
 
 }
 
-.Collapsible__trigger {
+.create-form .Collapsible__trigger {
   border: 1px #222 solid;
   border-radius: 3px;
   padding: 5px;
@@ -83,7 +88,7 @@ a {
 
 input[type=text], input[type=password], textarea, select {
     width: 50%;
-    padding: 12px 20px;
+    padding: 10px 10px;
     margin: 8px 0;
     display: inline-block;
     border-radius: 4px;
@@ -94,7 +99,7 @@ input[type=text], input[type=password], textarea, select {
 
 .signup input[type=submit], .signup button[type=submit], .login input[type=submit], .login button[type=submit] {
     width: 20%;
-    background-color: #0076FF;
+    background-color: #692812;
     color: white;
     padding: 12px 5px;
     margin: 8px 0;
@@ -102,8 +107,30 @@ input[type=text], input[type=password], textarea, select {
     border-radius: 4px;
 }
 
- input[type=submit]:hover, button[type=submit]:hover {
-    background-color: #0052B2;
+.app input[type=submit]:hover, .app button[type=submit]:hover {
+   background-color: #B04328;
+}
+
+
+.searchbar input[type=text] {
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px 0px 0px 4px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-right: 0;
+}
+.searchbar input[type=submit], .searchbar button[type=submit] {
+  background-color: #692812;
+  color: white;
+  padding:6px 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 0px 4px 4px 0px;
+
 }
 
 img.hide {
@@ -117,8 +144,32 @@ img.hide {
 
 .coffee-listing {
   border: 1px solid black;
+  margin: 10px;
+}
+
+.listings .row {
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+
+ hr {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.coffee-listing {
+  height: 300px;
 }
 .coffee-listing img {
-  width: 100%;
-  height: auto;
+  max-height: 70%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  padding: 10px;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Navibar from '../../containers/Navibar/Navibar.js';
 import '../../stylesheets/style.css';
 
 export default class SignUpPage extends Component {
@@ -69,45 +69,48 @@ export default class SignUpPage extends Component {
 
   render() {
     return (
-      <div className='container signup'>
-        <h1>
-          Sign up
-        </h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>First name </label> <br/>
-          <input type="text" placeholder="John"/> <br></br>
-          <label>Last name</label><br/>
-          <input type="text" placeholder="Doe"/>
-          <div className={this.state.emailError}>
-            <label>Email </label><br/>
-            <input type ='text' name='email'
-              onBlur={this.validateEmail}
-              value={this.state.email}
-              placeholder="example@email.com"
-              onChange={this.handleInputChange}/>
-          </div>
+      <div className='signup'>
+        <Navibar />
+        <div className='container'>
+          <h1>
+            Sign up
+          </h1>
+          <form onSubmit={this.handleSubmit}>
+            <label>First name </label> <br/>
+            <input type="text" placeholder="John"/> <br></br>
+            <label>Last name</label><br/>
+            <input type="text" placeholder="Doe"/>
+            <div className={this.state.emailError}>
+              <label>Email </label><br/>
+              <input type ='text' name='email'
+                onBlur={this.validateEmail}
+                value={this.state.email}
+                placeholder="example@email.com"
+                onChange={this.handleInputChange}/>
+            </div>
 
-          <div className={this.getValidationState()}>
-            <label>Password </label><br/>
-            <input name='password'
-              type='password'
-              value={this.state.password}
-              placeholder="Anything but '123456' 😂"
-              onChange={this.handleInputChange}/>
-            {this.renderPasswordError()}
-          </div>
+            <div className={this.getValidationState()}>
+              <label>Password </label><br/>
+              <input name='password'
+                type='password'
+                value={this.state.password}
+                placeholder="Anything but '123456' 😂"
+                onChange={this.handleInputChange}/>
+              {this.renderPasswordError()}
+            </div>
 
-          <div className=''>
-            <label>Confirm Password </label><br/>
-            <input name='passwordConfirmation'
-              type='password'
-              value={this.state.passwordConfirmation}
-              placeholder=""
-              onChange={this.handleInputChange}/>
-            {this.validatePassword()}
-          </div>
-          <input type="submit" onClick={this.handleSubmit} />
-        </form>
+            <div className=''>
+              <label>Confirm Password </label><br/>
+              <input name='passwordConfirmation'
+                type='password'
+                value={this.state.passwordConfirmation}
+                placeholder=""
+                onChange={this.handleInputChange}/>
+              {this.validatePassword()}
+            </div>
+            <input type="submit" onClick={this.handleSubmit} />
+          </form>
+        </div>
       </div>
     );
   }

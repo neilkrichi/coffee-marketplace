@@ -4,8 +4,9 @@ import FontAwesome from 'react-fontawesome';
 import { Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 
-import CoffeeListing from '../CoffeeListing/CoffeeListing.js';
-import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js'
+import CoffeeListing from '../../containers/CoffeeListing/CoffeeListing.js';
+import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
+import Navibar from '../../containers/Navibar/Navibar.js';
 import '../../stylesheets/style.css';
 
 
@@ -44,10 +45,15 @@ componentWillMount(){
 
   render() {
     return (
-      <div className='container listings'>
+      <div className='listings'>
+        <Navibar />
+        <div className='container'>
         <h1>
           Listings
         </h1>
+      <hr />
+        <CreateCoffeeForm />
+
         <Row>
           {this.state.coffeeData.map((coffee)=>{
             return(
@@ -58,7 +64,9 @@ componentWillMount(){
           })}
         </Row>
 
+      <hr />
         <CreateCoffeeForm />
+        </div>
       </div>
     );
   }

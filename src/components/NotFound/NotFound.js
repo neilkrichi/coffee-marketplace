@@ -1,5 +1,6 @@
 // src/components/NotFound/index.js
 import React, { Component } from 'react';
+import Navibar from '../../containers/Navibar/Navibar.js';
 import '../../stylesheets/style.css';
 
 export default class NotFound extends Component {
@@ -9,10 +10,13 @@ export default class NotFound extends Component {
 
   render() {
     return (
-      <div className='container NotFound'>
+      <div className='notfound'>
+        <Navibar />
+        <div className='container'>
         <h1>
           404 <small>Not Found 😭</small>
         </h1>
+        </div>
       </div>
     );
   }
