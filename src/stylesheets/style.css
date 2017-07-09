@@ -7,8 +7,10 @@
 
 .app-logo {
   animation: app-logo-spin infinite 1s linear;
-  height: 50px;
+  height: 40px;
+  width: auto;
 }
+
 
 .app-header h1 {
   font-size: 40px;
@@ -17,13 +19,12 @@
 .app-header {
   background-color: #993A22;
   color: black;
-  height: 1000px;
+  height: 700px;
   padding-top: 170px;
   background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg');
   background-size: auto;
   background-repeat: no-repeat;
   background-position: left top;
-  background-attachment: fixed;
 }
 
 .app-intro {
