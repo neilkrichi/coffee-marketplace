@@ -54,6 +54,7 @@ componentWillMount(){
         </h1>
         <button className="add-listing"><Link to='/sell'>Add a product</Link></button>
       <hr />
+      </div>
         <Row>
           {this.state.coffeeData.map((coffee)=>{
             return(
@@ -66,7 +67,6 @@ componentWillMount(){
 
       <hr />
         </div>
-      </div>
     );
   }
 }

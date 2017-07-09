@@ -3,6 +3,7 @@ import '../../stylesheets/style.css';
 import { Link } from 'react-router';
 import SearchBar from '../../containers/SearchBar/SearchBar.js';
 import Navibar from '../../containers/Navibar/Navibar.js';
+import Footer from '../../containers/Footer/Footer.js';
 import FontAwesome from 'react-fontawesome';
 
 
@@ -27,6 +28,7 @@ class App extends Component {
                   />
         </div>
       </div>
+      <Footer />
     </div>
     );
   }

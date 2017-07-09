@@ -10,11 +10,15 @@ export default class CoffeeListing extends Component {
   render() {
     return (
       <div className='coffee-listing'>
-            <img alt="" src={this.props.coffee.img}/>
-            <h4>{this.props.coffee.name}</h4>
-            <p>{this.props.coffee.description}</p>
-            <p>{this.props.coffee.tones}</p>
-</div>
+        <img className="image" alt="Listing" src={this.props.coffee.img}/>
+        <div className='middle'>
+          <div className='text'>
+          <h4>{this.props.coffee.name}</h4>
+          <p>{this.props.coffee.description}</p>
+          <p>{this.props.coffee.tones}</p>
+          </div>
+        </div>
+      </div>
     );
   }
 }
