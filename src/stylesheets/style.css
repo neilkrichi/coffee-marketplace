@@ -17,8 +17,6 @@
 .app-header {
   background-color: #993A22;
   color: black;
-  font-family: 'Open Sans';
-  font-size: 1.2em;
   height: 700px;
   padding-top: 170px;
   background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg');
@@ -29,7 +27,6 @@
 }
 
 .app-intro {
-  font-size: 1em;
 }
 
 .navbar {
@@ -45,9 +42,15 @@
   border-radius: 3px;
 }
 
-a {
-  color: #999;
+.navibar a {
+  color: white;
 }
+
+.navibar a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 
 @keyframes app-logo-spin {
   from { transform: rotate(-90deg); }

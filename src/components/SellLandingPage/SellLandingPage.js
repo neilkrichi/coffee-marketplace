@@ -16,6 +16,7 @@ export default class SellLandingPage extends Component {
           <h1>
             Sell on Roastr
           </h1>
+          <CreateCoffeeForm />
         </div>
       </div>
     );

@@ -80,7 +80,6 @@ export default class CreateCoffeeForm extends React.Component {
           Add a product:
         </button> */}
 
-        <Collapsible trigger="Add a product:">
           <form onSubmit={this.handleSubmit}>
             <div>
               <label>Product name</label> <br></br>
@@ -133,7 +132,6 @@ export default class CreateCoffeeForm extends React.Component {
             </div>
             <button type="submit" value="Submit" onClick={this.handleSubmit}><Link to='/home'>Submit</Link></button>
           </form>
-        </Collapsible>
       </div>
     )
   }

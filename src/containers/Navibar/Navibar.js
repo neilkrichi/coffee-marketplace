@@ -20,10 +20,7 @@ export default class Navibar extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavDropdown eventKey={1} title="Discover" id="basic-nav-dropdown">
-                <MenuItem eventKey={1.1}><Link to='/listings'>Coffee beans</Link></MenuItem>
-                <MenuItem eventKey={1.2}>Ground coffee</MenuItem>
-              </NavDropdown>
+              <NavItem eventKey={1}><Link to='/listings'>Discover</Link></NavItem>
               <NavItem eventKey={2}><Link to='/blog'>Blog</Link></NavItem>
             </Nav>
             <Nav pullRight>

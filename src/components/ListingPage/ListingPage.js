@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
+import { Link } from 'react-router';
 
 import CoffeeListing from '../../containers/CoffeeListing/CoffeeListing.js';
 import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
@@ -51,9 +52,8 @@ componentWillMount(){
         <h1>
           Listings
         </h1>
+        <button className="add-listing"><Link to='/sell'>Add a product</Link></button>
       <hr />
-        <CreateCoffeeForm />
-
         <Row>
           {this.state.coffeeData.map((coffee)=>{
             return(
