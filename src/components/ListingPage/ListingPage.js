@@ -58,7 +58,7 @@ componentWillMount(){
         <Row>
           {this.state.coffeeData.map((coffee)=>{
             return(
-              <Col md={4}>
+              <Col md={4} sm={6} xs={12}>
                 <CoffeeListing coffee={coffee}/>
               </Col>
             )

@@ -60,8 +60,14 @@ export default class CreateCoffeeForm extends React.Component {
 
  pickFile(){
    filepicker.pick(
+     {
+       cropRatio: 6/5,
+       mimetype: 'image/*',
+       services: ['CONVERT', 'COMPUTER'],
+       conversions: ['crop', 'rotate', 'filter']
+     },
      (Blob) => {
-      this.setState({imgUrl: Blob.url});
+       this.setState({imgUrl: Blob.url});
      }
    )
  }

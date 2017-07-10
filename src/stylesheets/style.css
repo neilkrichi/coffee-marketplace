@@ -163,7 +163,21 @@ img.hide {
 .coffee-listing {
   border: 1px solid black;
   margin: 10px;
+  height: 300px;
 }
+
+@media (max-width: 768px) /* and (orientation: landscape) */ {
+  .coffee-listing {
+    border: none;
+    margin: 0px;
+    height: 400px;
+  }
+
+  .image {
+    padding-top: 25px;
+  }
+}
+
 
 .listings .row {
   margin: 10px 0px;
@@ -179,10 +193,6 @@ img.hide {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-}
-
-.coffee-listing {
-  height: 200px;
 }
 
 /* .coffee-listing img {
