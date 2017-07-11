@@ -1,9 +1,12 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
-import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js'
-import '../../stylesheets/style.css';
+
 import Navibar from '../../containers/Navibar/Navibar.js';
+import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
+import Footer from '../../containers/Footer/Footer.js';
+import '../../stylesheets/style.css';
+
 
 
 export default class SellLandingPage extends Component {
@@ -27,6 +30,7 @@ export default class SellLandingPage extends Component {
             </Row>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

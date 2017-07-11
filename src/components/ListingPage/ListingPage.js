@@ -8,25 +8,20 @@ import { Link } from 'react-router';
 import CoffeeListing from '../../containers/CoffeeListing/CoffeeListing.js';
 import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
 import Navibar from '../../containers/Navibar/Navibar.js';
+import Footer from '../../containers/Footer/Footer.js'
 import '../../stylesheets/style.css';
 
 
 export default class ListingPage extends Component {
-
-
-componentWillMount(){
-    this.getCoffees();
-}
-
   constructor(props) {
     super(props);
     this.state = {
-      name:'',
-      tasteTone: 'Bitter',
-      description: '',
-      imgUrl: '',
       coffeeData: []
     };
+  }
+
+  componentWillMount(){
+      this.getCoffees();
   }
 
   getCoffees(){
@@ -46,6 +41,7 @@ componentWillMount(){
 
   render() {
     return (
+      <div>
       <div className='listings'>
         <Navibar />
         <div className='container-fluid'>
@@ -65,10 +61,10 @@ componentWillMount(){
               })}
             </Row>
           </div>
-
-          <hr />
         </div>
       </div>
+      <Footer />
+</div>
     );
   }
 }
