@@ -34,7 +34,8 @@ export default class CreateCoffeeForm extends React.Component {
       name: this.state.name,
       description: this.state.description,
       tones: this.state.tasteTone,
-      img: this.state.imgUrl
+      img: this.state.imgUrl,
+      roastingLevel: this.state.roastingLevel
     }
 
 

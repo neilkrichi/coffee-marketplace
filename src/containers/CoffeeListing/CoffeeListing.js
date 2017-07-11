@@ -13,9 +13,10 @@ export default class CoffeeListing extends Component {
         <img className="image" alt="Listing" src={this.props.coffee.img}/>
         <div className='middle'>
           <div className='text'>
-          <h4>{this.props.coffee.name}</h4>
+          <h2>{this.props.coffee.name}</h2>
+          <h4>{this.props.coffee.tones}</h4>
+          <h4>{this.props.coffee.roastingLevel}</h4>
           <p>{this.props.coffee.description}</p>
-          <p>{this.props.coffee.tones}</p>
           </div>
         </div>
       </div>

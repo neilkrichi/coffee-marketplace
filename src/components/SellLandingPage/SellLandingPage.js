@@ -19,10 +19,9 @@ export default class SellLandingPage extends Component {
           </h1>
           <div className='grey-box'>
             <Row>
-              <Col md={7}>
-                <CreateCoffeeForm />
+              <Col md={4}>
               </Col>
-              <Col md={5}>
+              <Col md={8}>
                 <CreateCoffeeForm />
               </Col>
             </Row>

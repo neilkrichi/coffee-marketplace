@@ -53,7 +53,7 @@ componentWillMount(){
             Listings
           </h1>
           <hr />
-          <button className="add-listing"><Link to='/sell'>Add a product</Link></button>
+          <Link to='/sell'><button className="add-listing">Add a product</button></Link>
           <div className='grey-box'>
             <Row>
               {this.state.coffeeData.map((coffee)=>{
