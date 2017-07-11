@@ -19,7 +19,8 @@ export default class CreateCoffeeForm extends React.Component {
       tasteTone: 'Select a tone',
       roastingLevel: 'Select a roasting level',
       description: '',
-      imgUrl: ''
+      imgUrl: '',
+      website: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -35,7 +36,8 @@ export default class CreateCoffeeForm extends React.Component {
       description: this.state.description,
       tones: this.state.tasteTone,
       img: this.state.imgUrl,
-      roastingLevel: this.state.roastingLevel
+      roastingLevel: this.state.roastingLevel,
+      url: this.state.website
     }
 
 
@@ -130,6 +132,16 @@ export default class CreateCoffeeForm extends React.Component {
                 rows="5"
                 onChange={this.handleInputChange}
                 value={this.state.description}> </textarea>
+            </div>
+
+            <div>
+              <label>Website</label> <br></br>
+              <input type="text"
+                name='website'
+                value={this.state.website}
+                placeholder="Add a link to your website"
+                onChange={this.handleInputChange}
+                />
             </div>
 
             <div className="img">

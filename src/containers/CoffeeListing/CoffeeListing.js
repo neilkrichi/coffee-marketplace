@@ -1,5 +1,6 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import '../../stylesheets/style.css';
 
 export default class CoffeeListing extends Component {
@@ -17,6 +18,7 @@ export default class CoffeeListing extends Component {
           <h4>{this.props.coffee.tones}</h4>
           <h4>{this.props.coffee.roastingLevel}</h4>
           <p>{this.props.coffee.description}</p>
+          <a href={this.props.coffee.url} target="_blank" className='website cta-button'>Get yours here</a>
           </div>
         </div>
       </div>

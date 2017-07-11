@@ -201,15 +201,23 @@ img.hide {
   display: none;
 }
 
-
-.listings .checkmark {
-  padding: 30px;
-}
-
 .coffee-listing {
   border: 1px solid black;
   margin: 10px;
-  height: 300px;
+  height: 350px;
+}
+
+.coffee-listing .website {
+  font-size: 12px;
+}
+
+.coffee-listing a {
+  color: white;
+}
+
+.coffee-listing a:hover {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) /* and (orientation: landscape) */ {
@@ -281,7 +289,7 @@ img.hide {
 }
 
 .text {
-  background-color: #4CAF50;
+  background-color: #331309;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
