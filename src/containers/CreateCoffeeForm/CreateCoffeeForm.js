@@ -20,7 +20,8 @@ export default class CreateCoffeeForm extends React.Component {
       roastingLevel: 'Select a roasting level',
       description: '',
       imgUrl: '',
-      website: ''
+      website: '',
+      coffeeID: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -38,6 +39,7 @@ export default class CreateCoffeeForm extends React.Component {
       img: this.state.imgUrl,
       roastingLevel: this.state.roastingLevel,
       url: this.state.website,
+      _id: this.state.coffeeID
     }
 
 

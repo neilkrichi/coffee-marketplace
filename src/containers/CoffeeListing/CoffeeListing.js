@@ -1,6 +1,7 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import axios from 'axios';
 import FontAwesome from 'react-fontawesome';
 import '../../stylesheets/style.css';
 
@@ -9,27 +10,26 @@ export default class CoffeeListing extends Component {
     super(props);
     this.state = {
       isClicked: false,
-      upvotes: 0
+      upvotes: 0,
+      coffee: {}
     };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleUpvoteChange(){
-    if (this.state.isClicked === false) {
-      this.setState({upvotes: (this.state.upvotes + 1)})
-    }
-    else {
-      this.setState({upvotes: (this.state.upvotes - 1)})
-    }
-
   }
 
 
-  handleClick() {
-    this.setState({isClicked: !this.state.isClicked})
-    this.handleUpvoteChange();
-    }
+
+  upvoteCoffee(){
+    return axios.post('https://cocoapi.herokuapp.com/upvote/coffee' , {id: this.props.coffee._id})
+      .then((response) => {
+        this.setState({coffee: response.data.theCoffee});
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+
+  }
+
 
   render() {
     return (
@@ -47,9 +47,9 @@ export default class CoffeeListing extends Component {
         </div>
       </div>
       <span type='button' className=' pull-right'>
-         {this.state.upvotes}
+         {this.props.coffee.votes}
       </span>
-      <button className={this.state.isClicked ? "red-heart" : ''} onClick={this.handleClick}>
+      <button className={this.state.isClicked ? "red-heart" : ''} onClick={this.upvoteCoffee.bind(this)}>
       <FontAwesome name='heart-o' size='1x'/>  Upvote
     </button>
   </div>

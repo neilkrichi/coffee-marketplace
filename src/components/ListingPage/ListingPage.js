@@ -36,9 +36,6 @@ export default class ListingPage extends Component {
   }
 
 
-
-
-
   render() {
     return (
       <div>
