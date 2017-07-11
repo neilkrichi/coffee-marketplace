@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-.container {
+.container-fluid {
+  padding-top: 20px;
 }
 
 .app-logo {
@@ -17,25 +18,83 @@
 }
 
 .app-header {
-  background-color: #993A22;
-  color: black;
+  color: white;
   height: 700px;
   padding-top: 170px;
-  background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg');
   background-size: auto;
   background-repeat: no-repeat;
   background-position: left top;
 }
 
+.app-header .intro-text {
+  z-index: 10;
+}
+
+.app-header video {
+  position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+}
+
+.bg-video-overlay{
+  position: absolute;
+ width: 100%;
+ height: 100%;
+ max-height: 1100px;
+ top: 0px;
+ bottom: 0px;
+ left: 0px;
+ right: 0px;
+ background-color: rgba(0,0,0, 0.2);
+ z-index: -99;
+}
+
+
+
+/* https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg */
+
 .app-intro {
 }
 
 .navbar {
-  background-color: #692812;
+  background-color: #331309;
   border: none;
   border-radius: 0;
   padding: 10px;
   margin-bottom: -10px;
+}
+
+.app .navbar {
+  background-color: transparent;
+}
+
+.app a {
+  color: white;
+}
+
+.cta-button {
+  width: 15%;
+  background-color: transparent;
+  color: white;
+  padding: 12px 5px;
+  margin: 8px 0;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.cta-button:hover {
+  background-color: #331309;
+  border: none;
+}
+
+.cta-button:hover a {
+  text-decoration: none;
 }
 
 .sign-in {
@@ -77,35 +136,8 @@
 }
 
 
-.create-form .Collapsible {
-  border: #222 solid;
-  padding: 10px 40px;
-  margin: 10px 30px;
-  text-align: center;
-  max-width: 700px;
-  display: block;
-  margin: auto;
-
-}
-
-.create-form .Collapsible .description {
-  font-size: 1.3em;
-}
-
-.create-form .Collapsible .info {
-
-}
-
-.create-form .Collapsible__trigger {
-  border: 1px #222 solid;
-  border-radius: 3px;
-  padding: 5px;
-  cursor: pointer;
-  background-color: #eee;
-}
-
 input[type=text], input[type=password], textarea, select {
-    width: 50%;
+    width: 100%;
     padding: 10px 10px;
     margin: 8px 0;
     display: inline-block;
@@ -115,9 +147,9 @@ input[type=text], input[type=password], textarea, select {
     border-style: solid;
 }
 
-.signup input[type=submit], .signup button[type=submit], .login input[type=submit], .login button[type=submit] {
+.add-listing, .signup input[type=submit], .signup button[type=submit], .login input[type=submit], .login button[type=submit] {
     width: 20%;
-    background-color: #692812;
+    background-color: #331309;
     color: white;
     padding: 12px 5px;
     margin: 8px 0;
@@ -125,7 +157,21 @@ input[type=text], input[type=password], textarea, select {
     border-radius: 4px;
 }
 
-.app input[type=submit]:hover, .app button[type=submit]:hover {
+.img button {
+  width: 30%;
+  background-color: #331309;
+  color: white;
+  padding: 6px 5px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.add-listing a {
+  color: white;
+}
+
+.add-listing:hover, .app input[type=submit]:hover, .app button[type=submit]:hover {
    background-color: #B04328;
 }
 
@@ -142,7 +188,7 @@ input[type=text], input[type=password], textarea, select {
     border-right: 0;
 }
 .searchbar input[type=submit], .searchbar button[type=submit] {
-  background-color: #692812;
+  background-color: #331309;
   color: white;
   padding:6px 5px;
   margin: 8px 0;
@@ -215,7 +261,7 @@ img.hide {
 }
 
 .middle {
-  width: 40%;
+  width: 60%;
   text-align: center;
   transition: .5s ease;
   opacity: 0;
@@ -239,6 +285,13 @@ img.hide {
   color: white;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+.grey-box {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #f5f5f5;
+  box-shadow: 2px 2px 1px #eee;
 }
 
 

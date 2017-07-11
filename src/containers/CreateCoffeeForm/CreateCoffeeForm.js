@@ -3,7 +3,7 @@ import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
 import '../../stylesheets/style.css';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 
 let filepicker = window.filepicker
@@ -55,16 +55,18 @@ export default class CreateCoffeeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.addCoffee()
+    this.addCoffee();
+    browserHistory.push('/home');
  }
 
  pickFile(){
    filepicker.pick(
      {
-       cropRatio: 6/5,
+       cropRatio: 1/1,
        mimetype: 'image/*',
        services: ['CONVERT', 'COMPUTER'],
-       conversions: ['crop', 'rotate', 'filter']
+       conversions: ['crop', 'rotate', 'filter'],
+       cropMin: [400, 400]
      },
      (Blob) => {
        this.setState({imgUrl: Blob.url});
@@ -132,11 +134,11 @@ export default class CreateCoffeeForm extends React.Component {
             <div className="img">
               <label>Insert a picture of your product <small>(Optional)</small></label>
               <br></br>
-              <button onClick={this.pickFile}>Choose your img</button>
+              <button type='button' onClick={this.pickFile}>Choose your img</button>
               <br></br>
-              <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'100%', height:'auto'}} />
+              <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'400px', height:'400px'}} />
             </div>
-            <button type="submit" value="Submit" onClick={this.handleSubmit}><Link to='/home'>Submit</Link></button>
+            <button type="submit" onClick={this.handleSubmit}>Submit</button>
           </form>
       </div>
     )

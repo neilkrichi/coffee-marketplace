@@ -48,25 +48,27 @@ componentWillMount(){
     return (
       <div className='listings'>
         <Navibar />
-        <div className='container'>
-        <h1>
-          Listings
-        </h1>
-        <button className="add-listing"><Link to='/sell'>Add a product</Link></button>
-      <hr />
-      </div>
-        <Row>
-          {this.state.coffeeData.map((coffee)=>{
-            return(
-              <Col md={4} sm={6} xs={12}>
-                <CoffeeListing coffee={coffee}/>
-              </Col>
-            )
-          })}
-        </Row>
+        <div className='container-fluid'>
+          <h1>
+            Listings
+          </h1>
+          <hr />
+          <button className="add-listing"><Link to='/sell'>Add a product</Link></button>
+          <div className='grey-box'>
+            <Row>
+              {this.state.coffeeData.map((coffee)=>{
+                return(
+                  <Col md={4} sm={6} xs={12}>
+                    <CoffeeListing coffee={coffee}/>
+                  </Col>
+                )
+              })}
+            </Row>
+          </div>
 
-      <hr />
+          <hr />
         </div>
+      </div>
     );
   }
 }

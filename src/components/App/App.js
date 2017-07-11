@@ -11,27 +11,28 @@ class App extends Component {
   render() {
     return (
       <div>
-      <div className='app'>
-        <Navibar />
-        <div className="app-header">
-          <img className="app-logo" src="../favicon.png" />
-          <h1>Welcome to Roastr</h1> <br/>
-            <h3 className="app-intro">
-              Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
-            </h3> <br/>
-          <h4><strong><Link to='/listings'>Discover</Link></strong> some of the finest coffees from all over the world</h4>
-            <FontAwesome
-                    className=''
-                    name='rocket'
-                    size='2x'
-                    style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-                  />
+        <div className='app'>
+          <Navibar />
+          <div className="app-header">
+            <video className='bg-video' autoPlay muted loop>
+              <source src='/videos/bgvideo.mp4' type="video/mp4"></source>
+            </video>
+            <div className='bg-video-overlay'>
+            </div>
+            <div className="intro-text">
+              <img className="app-logo" src="../favicon.png" />
+              <h1>Welcome to Roastr</h1> <br/>
+              <h3 className="app-intro">
+                Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
+              </h3> <br/>
+            <button className="cta-button"><Link to='/listings'>Shop our products</Link></button>
+            </div>
+            </div>
+          </div>
+          <Footer />
         </div>
-      </div>
-      <Footer />
-    </div>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
