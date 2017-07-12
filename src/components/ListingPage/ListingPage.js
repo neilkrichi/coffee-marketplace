@@ -16,11 +16,12 @@ export default class ListingPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coffeeData: []
+      coffeeData: [],
+      updatedVotes: "???"
     };
   }
 
-  componentWillMount(){
+  componentDidMount(){
       this.getCoffees();
   }
 
@@ -29,6 +30,26 @@ export default class ListingPage extends Component {
       .then((response) => {
         this.setState({coffeeData: response.data});
         console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  upvoteCoffee(id){
+    return axios.post('https://cocoapi.herokuapp.com/upvote/coffee' , {id: id})
+      .then((response) => {
+        this.setState({updatedVotes: response.data.theCoffee.votes});
+        console.log(response.data.theCoffee.votes);
+        /* const replaceCoffee = (coffees, refreshedCoffee) => {
+             return coffees.map((coffee) => {
+               if(coffee.id === refreshedCoffee.id){
+                 this.setState({updatedVotes: refreshedCoffee.votes});
+               }else{
+
+               }
+             })
+           } */
       })
       .catch((error) => {
         console.log(error);
@@ -52,7 +73,7 @@ export default class ListingPage extends Component {
               {this.state.coffeeData.map((coffee)=>{
                 return(
                   <Col md={4} sm={6} xs={12}>
-                    <CoffeeListing coffee={coffee}/>
+                    <CoffeeListing coffee={coffee} votes={this.state.updatedVotes} upvoteCoffee={this.upvoteCoffee.bind(this)}/>
                   </Col>
                 )
               })}

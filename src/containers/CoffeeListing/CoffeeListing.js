@@ -10,24 +10,8 @@ export default class CoffeeListing extends Component {
     super(props);
     this.state = {
       isClicked: false,
-      upvotes: 0,
-      coffee: {}
+      upvotes: 0
     };
-  }
-
-
-
-  upvoteCoffee(){
-    return axios.post('https://cocoapi.herokuapp.com/upvote/coffee' , {id: this.props.coffee._id})
-      .then((response) => {
-        this.setState({coffee: response.data.theCoffee});
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-
   }
 
 
@@ -47,9 +31,11 @@ export default class CoffeeListing extends Component {
         </div>
       </div>
       <span type='button' className=' pull-right'>
-         {this.props.coffee.votes}
+         {this.props.votes}
       </span>
-      <button className={this.state.isClicked ? "red-heart" : ''} onClick={this.upvoteCoffee.bind(this)}>
+      <button
+        className={this.state.isClicked ? "red-heart" : ''}
+        onClick={()=>{this.props.upvoteCoffee(this.props.coffee._id)}}>
       <FontAwesome name='heart-o' size='1x'/>  Upvote
     </button>
   </div>
