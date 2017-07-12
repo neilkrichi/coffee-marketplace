@@ -4,6 +4,7 @@ import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
 import '../../stylesheets/style.css';
 import { browserHistory, Link } from 'react-router';
+import {Row, Col} from 'react-bootstrap';
 
 
 let filepicker = window.filepicker
@@ -45,12 +46,12 @@ export default class CreateCoffeeForm extends React.Component {
 
     // pass the actual values to make this POST CALL
     return axios.post('https://cocoapi.herokuapp.com/add/coffee', coffeeData)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
 
@@ -62,99 +63,118 @@ export default class CreateCoffeeForm extends React.Component {
     event.preventDefault();
     this.addCoffee();
     browserHistory.push('/home');
- }
+  }
 
- pickFile(){
-   filepicker.pick(
-     {
-       cropRatio: 1/1,
-       mimetype: 'image/*',
-       services: ['CONVERT', 'COMPUTER'],
-       conversions: ['crop', 'rotate', 'filter'],
-       cropMin: [400, 400]
-     },
-     (Blob) => {
-       this.setState({imgUrl: Blob.url});
-     }
-   )
- }
+  pickFile(){
+    filepicker.pick(
+      {
+        cropRatio: 1/1,
+        mimetype: 'image/*',
+        services: ['CONVERT', 'COMPUTER'],
+        conversions: ['crop', 'rotate', 'filter'],
+        cropMin: [400, 400]
+      },
+      (Blob) => {
+        this.setState({imgUrl: Blob.url});
+      }
+    )
+  }
 
- hideImg(){
-   if (this.state.imgUrl === ''){
-     return ("hide")
-   }
- }
+  hideImg(){
+    if (this.state.imgUrl === ''){
+      return ("hide")
+    }
+  }
 
   render() {
     return (
       <div className="create-form">
+        <form onSubmit={this.handleSubmit}>
+        <Row>
+          <Col md={4}><label>Product name</label></Col>
+          <Col md={8}>
+              <div>
+                <input type="text"
+                  name='name'
+                  value={this.state.name}
+                  placeholder="e.g. Kenyan Dark Roast whatever"
+                  onChange={this.handleInputChange}
+                  />
+              </div>
+            </Col>
+          </Row>
 
-    {/*    <button onClick={this.open}>
-          Add a product:
-        </button> */}
 
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label>Product name</label> <br></br>
-              <input type="text"
-                name='name'
-                value={this.state.name}
-                placeholder="e.g. Kenyan Dark Roast whatever"
-                onChange={this.handleInputChange}
-              />
-            </div>
+          <Row>
+            <Col md={4}><label>Taste tone</label></Col>
+            <Col md={8}>
+              <div>
+                <select name='tasteTone' value={this.state.tasteTone} onChange={this.handleInputChange}>
+                  <option tasteTone="bitter">Bitter</option>
+                  <option tasteTone="sweet">Sweet</option>
+                  <option tasteTone="fruit notes">Fruit notes</option>
+                  <option tasteTone="flower notes">Flower notes</option>
+                  <option tasteTone="herbal notes">Herbal notes</option>
+                </select>
+              </div>
+            </Col>
+          </Row>
 
-            <div>
-              <label>Taste tone</label> <br></br>
-              <select name='tasteTone' value={this.state.tasteTone} onChange={this.handleInputChange}>
-                <option tasteTone="bitter">Bitter</option>
-                <option tasteTone="sweet">Sweet</option>
-                <option tasteTone="fruit notes">Fruit notes</option>
-                <option tasteTone="flower notes">Flower notes</option>
-                <option tasteTone="herbal notes">Herbal notes</option>
-              </select>
-            </div>
+          <Row>
+            <Col md={4}><label>Roasting Level</label></Col>
+            <Col md={8}>
+              <div>
+                <select name='roastingLevel' value={this.state.roastingLevel} onChange={this.handleInputChange}>
+                  <option roastingLevel="light">Light</option>
+                  <option roastingLevel="medium">Medium</option>
+                  <option roastingLevel="medium dark">Medium Dark</option>
+                  <option roastingLevel="dark">Dark</option>
+                  <option roastingLevel="darker">Darker</option>
+                  <option roastingLevel="very dark">Very dark</option>
+                </select>
+              </div>
+            </Col>
+          </Row>
 
-            <div>
-              <label>Roasting Level</label> <br></br>
-              <select name='roastingLevel' value={this.state.roastingLevel} onChange={this.handleInputChange}>
-                <option roastingLevel="light">Light</option>
-                <option roastingLevel="medium">Medium</option>
-                <option roastingLevel="medium dark">Medium Dark</option>
-                <option roastingLevel="dark">Dark</option>
-                <option roastingLevel="darker">Darker</option>
-                <option roastingLevel="very dark">Very dark</option>
-              </select>
-            </div>
+          <Row>
+            <Col md={4}> <label>Description</label> </Col>
+            <Col md={8}>
+              <div>
+                <textarea name='description'
+                  placeholder="Describe your product in a few sentences..."
+                  rows="5"
+                  onChange={this.handleInputChange}
+                  value={this.state.description}> </textarea>
+              </div>
+            </Col>
+          </Row>
 
-            <div>
-              <label>Description</label> <br></br>
-              <textarea name='description'
-                placeholder="Describe your product in a few sentences..."
-                rows="5"
-                onChange={this.handleInputChange}
-                value={this.state.description}> </textarea>
-            </div>
+          <Row>
+            <Col md={4}><label>Website</label></Col>
+            <Col md={8}>
+              <div>
+                <input type="text"
+                  name='website'
+                  value={this.state.website}
+                  placeholder="Add a link to your website"
+                  onChange={this.handleInputChange}
+                  />
+              </div>
+            </Col>
+          </Row>
 
-            <div>
-              <label>Website</label> <br></br>
-              <input type="text"
-                name='website'
-                value={this.state.website}
-                placeholder="Add a link to your website"
-                onChange={this.handleInputChange}
-                />
-            </div>
-
-            <div className="img">
-              <label>Insert a picture of your product <small>(Optional)</small></label>
-              <br></br>
-              <button type='button' onClick={this.pickFile}>Choose your img</button>
-              <br></br>
-              <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'400px', height:'400px'}} />
-            </div>
-            <button type="submit" onClick={this.handleSubmit}>Submit</button>
-          </form>
+          <Row>
+            <Col md={4}><label>Insert a picture of your product <small>(Optional)</small></label></Col>
+            <Col md={8}>
+              <div className="img">
+                <button type='button' onClick={this.pickFile}>Choose your img</button>
+                <br></br>
+                <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'400px', height:'400px'}} />
+              </div>
+            </Col>
+          </Row>
+          <button type="submit" onClick={this.handleSubmit}>Submit</button>
+        </form>
       </div>
     )
   }

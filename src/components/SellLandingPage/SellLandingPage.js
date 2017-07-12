@@ -21,13 +21,7 @@ export default class SellLandingPage extends Component {
             Sell on Roastr
           </h1>
           <div className='grey-box'>
-            <Row>
-              <Col md={4}>
-              </Col>
-              <Col md={8}>
-                <CreateCoffeeForm />
-              </Col>
-            </Row>
+            <CreateCoffeeForm />
           </div>
         </div>
         <Footer />

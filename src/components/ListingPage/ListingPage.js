@@ -22,67 +22,72 @@ export default class ListingPage extends Component {
   }
 
   componentDidMount(){
-      this.getCoffees();
+    this.getCoffees();
   }
 
   getCoffees(){
     return axios.get('https://cocoapi.herokuapp.com/coffees')
-      .then((response) => {
-        this.setState({coffeeData: response.data});
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .then((response) => {
+      this.setState({coffeeData: response.data});
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   upvoteCoffee(id){
     return axios.post('https://cocoapi.herokuapp.com/upvote/coffee' , {id: id})
-      .then((response) => {
-        this.setState({updatedVotes: response.data.theCoffee.votes});
-        console.log(response.data.theCoffee.votes);
-        /* const replaceCoffee = (coffees, refreshedCoffee) => {
-             return coffees.map((coffee) => {
-               if(coffee.id === refreshedCoffee.id){
-                 this.setState({updatedVotes: refreshedCoffee.votes});
-               }else{
+    .then((response) => {
+      // this.setState({updatedVotes: response.data.theCoffee.votes});
+      // console.log(response.data.theCoffee.votes);
+      const replaceCoffee = (coffees, refreshedCoffee) => {
+        return coffees.map((coffee) => {
+          if(coffee._id === refreshedCoffee._id){
+            return refreshedCoffee
+          }else{
+            return coffee
+          }
+        })
+      }
 
-               }
-             })
-           } */
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      let coffees = this.state.coffeeData
+      let newCoffee = response.data.theCoffee
+      let newCoffees = replaceCoffee(coffees, newCoffee)
+      this.setState({coffeeData: newCoffees})
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
 
   render() {
     return (
       <div>
-      <div className='listings'>
-        <Navibar />
-        <div className='container-fluid'>
-          <h1>
-            Listings
-          </h1>
-          <hr />
-          <Link to='/sell'><button className="add-listing">Add a product</button></Link>
-          <div className='grey-box'>
-            <Row>
-              {this.state.coffeeData.map((coffee)=>{
-                return(
-                  <Col md={4} sm={6} xs={12}>
-                    <CoffeeListing coffee={coffee} votes={this.state.updatedVotes} upvoteCoffee={this.upvoteCoffee.bind(this)}/>
-                  </Col>
-                )
-              })}
-            </Row>
+        <div className='listings'>
+          <Navibar />
+          <div className='container-fluid'>
+            <h1>
+              Listings
+            </h1>
+            <hr />
+            <Link to='/sell'><button className="add-listing">Add a product</button></Link>
+            <div className='grey-box'>
+              <Row>
+                {this.state.coffeeData.map((coffee)=>{
+                  return(
+                    <Col md={4} sm={6} xs={12}>
+                      <CoffeeListing coffee={coffee} upvoteCoffee={this.upvoteCoffee.bind(this)}/>
+                    </Col>
+                  )
+                })}
+              </Row>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-</div>
     );
   }
 }

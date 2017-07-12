@@ -31,7 +31,7 @@ export default class CoffeeListing extends Component {
         </div>
       </div>
       <span type='button' className=' pull-right'>
-         {this.props.votes}
+         {this.props.coffee.votes}
       </span>
       <button
         className={this.state.isClicked ? "red-heart" : ''}
