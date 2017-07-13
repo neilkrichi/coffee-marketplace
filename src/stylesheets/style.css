@@ -89,7 +89,7 @@ z-index: -100;
 }
 
 .cta-button:hover {
-  background-color: #331309;
+  background-color: #4A1C0D;
   border: none;
 }
 
@@ -172,7 +172,7 @@ input[type=text], input[type=password], textarea, select {
 }
 
 .add-listing:hover, .app input[type=submit]:hover, .app button[type=submit]:hover {
-   background-color: #B04328;
+   background-color: #4A1C0D;
 }
 
 
@@ -262,6 +262,23 @@ img.hide {
   margin: auto;
   padding: 10px;
 } */
+
+.img .choose-img:hover {
+  background-color: #4A1C0D;
+}
+
+
+
+.create-form .submit-form {
+  width: 20%;
+  background-color: #331309;
+  color: white;
+  padding: 8px 5px;
+  margin: 15px 0;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-size: 16px;
+}
 
 .image {
   opacity: 1;

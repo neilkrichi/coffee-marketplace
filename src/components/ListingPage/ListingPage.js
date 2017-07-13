@@ -17,7 +17,8 @@ export default class ListingPage extends Component {
     super(props);
     this.state = {
       coffeeData: [],
-      updatedVotes: "???"
+      upvotedCoffees: [],
+      isClicked: false
     };
   }
 
@@ -61,6 +62,21 @@ export default class ListingPage extends Component {
     });
   }
 
+  upvoteCoffeeWrapper(id){
+      // if the id of the coffee we're trying to upvote doesn't exist in the upvotedCoffees array
+    	if(this.state.upvotedCoffees.indexOf(id) === -1){
+        // upvote the coffee
+    		this.upvoteCoffee(id)
+        // add the id of the coffee we're trying to upvote to the upvotedCoffees array
+        let upvotedCoffees = this.state.upvotedCoffees
+        upvotedCoffees.push(id)
+    		this.setState({
+          upvotedCoffees: upvotedCoffees,
+          isClicked: true
+        })
+    	}
+
+    }
 
   render() {
     return (
@@ -78,7 +94,10 @@ export default class ListingPage extends Component {
                 {this.state.coffeeData.map((coffee)=>{
                   return(
                     <Col md={4} sm={6} xs={12}>
-                      <CoffeeListing coffee={coffee} upvoteCoffee={this.upvoteCoffee.bind(this)}/>
+                      <CoffeeListing
+                        coffee={coffee}
+                        upvoteCoffee= {this.upvoteCoffeeWrapper.bind(this)}
+                        />
                     </Col>
                   )
                 })}

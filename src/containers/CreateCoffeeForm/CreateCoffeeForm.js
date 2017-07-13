@@ -61,8 +61,13 @@ export default class CreateCoffeeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.addCoffee();
-    browserHistory.push('/home');
+    if (this.state.name === '' || this.state.description === '' || this.state.imgUrl === '' || this.state.website === '') {
+      alert('Please fill out all required fields');
+    }
+    else {
+      this.addCoffee();
+      browserHistory.push('/home');
+    }
   }
 
   pickFile(){
@@ -91,7 +96,7 @@ export default class CreateCoffeeForm extends React.Component {
       <div className="create-form">
         <form onSubmit={this.handleSubmit}>
         <Row>
-          <Col md={4}><label>Product name</label></Col>
+          <Col md={4}><label>Product name <small>*</small></label></Col>
           <Col md={8}>
               <div>
                 <input type="text"
@@ -106,7 +111,7 @@ export default class CreateCoffeeForm extends React.Component {
 
 
           <Row>
-            <Col md={4}><label>Taste tone</label></Col>
+            <Col md={4}><label>Taste tone <small>*</small></label></Col>
             <Col md={8}>
               <div>
                 <select name='tasteTone' value={this.state.tasteTone} onChange={this.handleInputChange}>
@@ -121,7 +126,7 @@ export default class CreateCoffeeForm extends React.Component {
           </Row>
 
           <Row>
-            <Col md={4}><label>Roasting Level</label></Col>
+            <Col md={4}><label>Roasting Level <small>*</small></label></Col>
             <Col md={8}>
               <div>
                 <select name='roastingLevel' value={this.state.roastingLevel} onChange={this.handleInputChange}>
@@ -137,7 +142,7 @@ export default class CreateCoffeeForm extends React.Component {
           </Row>
 
           <Row>
-            <Col md={4}> <label>Description</label> </Col>
+            <Col md={4}> <label>Description <small>*</small></label> </Col>
             <Col md={8}>
               <div>
                 <textarea name='description'
@@ -150,7 +155,7 @@ export default class CreateCoffeeForm extends React.Component {
           </Row>
 
           <Row>
-            <Col md={4}><label>Website</label></Col>
+            <Col md={4}><label>Website <small>*</small></label></Col>
             <Col md={8}>
               <div>
                 <input type="text"
@@ -164,16 +169,16 @@ export default class CreateCoffeeForm extends React.Component {
           </Row>
 
           <Row>
-            <Col md={4}><label>Insert a picture of your product <small>(Optional)</small></label></Col>
+            <Col md={4}><label>Insert a picture of your product <small>*</small></label></Col>
             <Col md={8}>
               <div className="img">
-                <button type='button' onClick={this.pickFile}>Choose your img</button>
+                <button type='button' className='choose-img' onClick={this.pickFile}>Choose your img</button>
                 <br></br>
                 <img alt="" className={this.hideImg()} src={this.state.imgUrl} style={{width:'400px', height:'400px'}} />
               </div>
             </Col>
           </Row>
-          <button type="submit" onClick={this.handleSubmit}>Submit</button>
+          <button type="submit" className='submit-form' onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
     )
