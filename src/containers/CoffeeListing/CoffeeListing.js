@@ -31,12 +31,12 @@ export default class CoffeeListing extends Component {
         </div>
       </div>
       <span type='button' className=' pull-right'>
-         {this.props.coffee.votes}
+         {this.props.coffee.votes} <FontAwesome name='heart-o' size='1x'/>
       </span>
       <button
         className={this.state.isClicked ? "red-heart" : ''}
         onClick={()=>{this.props.upvoteCoffee(this.props.coffee._id)}}>
-      <FontAwesome name='heart-o' size='1x'/>  Upvote
+        Upvote
     </button>
   </div>
     );

@@ -278,7 +278,13 @@ img.hide {
   border: 2px solid white;
   border-radius: 4px;
   font-size: 16px;
+  outline: none;
 }
+
+.create-form .submit-form:hover {
+  background-color: #4A1C0D;
+}
+
 
 .image {
   opacity: 1;
