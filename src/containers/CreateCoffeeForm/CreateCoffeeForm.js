@@ -17,8 +17,8 @@ export default class CreateCoffeeForm extends React.Component {
     super(props);
     this.state = {
       name:'',
-      tasteTone: 'Select a tone',
-      roastingLevel: 'Select a roasting level',
+      tasteTone: '',
+      roastingLevel: '',
       description: '',
       imgUrl: '',
       website: '',
@@ -61,7 +61,10 @@ export default class CreateCoffeeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.state.name === '' || this.state.description === '' || this.state.imgUrl === '' || this.state.website === '') {
+    if (this.state.name === '' || this.state.description === ''
+     || this.state.imgUrl === '' || this.state.website === ''
+     || this.state.tasteTone === '' || this.state.roastingLevel === ''
+   ) {
       alert('Please fill out all required fields');
     }
     else {
@@ -115,6 +118,7 @@ export default class CreateCoffeeForm extends React.Component {
             <Col md={8}>
               <div>
                 <select name='tasteTone' value={this.state.tasteTone} onChange={this.handleInputChange}>
+                  <option tasteTone=""></option>
                   <option tasteTone="bitter">Bitter</option>
                   <option tasteTone="sweet">Sweet</option>
                   <option tasteTone="fruit notes">Fruit notes</option>
@@ -130,6 +134,7 @@ export default class CreateCoffeeForm extends React.Component {
             <Col md={8}>
               <div>
                 <select name='roastingLevel' value={this.state.roastingLevel} onChange={this.handleInputChange}>
+                  <option roastingLevel=""></option>
                   <option roastingLevel="light">Light</option>
                   <option roastingLevel="medium">Medium</option>
                   <option roastingLevel="medium dark">Medium Dark</option>
