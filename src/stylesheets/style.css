@@ -14,7 +14,7 @@
 
 
 .app-header h1 {
-  font-size: 40px;
+  font-size: 48px;
 }
 
 .app-header {
@@ -59,6 +59,7 @@ z-index: -100;
 /* https://www.pixelstalk.net/wp-content/uploads/2016/05/Desktop-Download-Coffee-Wallpapers-HD.jpg */
 
 .app-intro {
+  font-size: 36px;
 }
 
 .navbar {

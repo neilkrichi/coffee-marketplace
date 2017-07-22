@@ -5,7 +5,9 @@ import SearchBar from '../../containers/SearchBar/SearchBar.js';
 import Navibar from '../../containers/Navibar/Navibar.js';
 import Footer from '../../containers/Footer/Footer.js';
 import FontAwesome from 'react-fontawesome';
+import TypeOut from 'react-typeout';
 
+const words = ['free-trade', 'organic', 'GMO-free', 'gluten-free', 'lactose-free', 'vegan', 'crossfit'];
 
 class App extends Component {
   render() {
@@ -23,7 +25,7 @@ class App extends Component {
               <img className="app-logo" src="../favicon.png" />
               <h1>Welcome to Roastr</h1> <br/>
               <h3 className="app-intro">
-                Your favorite free-trade, organic, GMO-free, gluten-free, lactose-free, vegan, crossfit <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
+                Your favorite <TypeOut words={words} typeSpeed={100} /> <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
               </h3> <br/>
             <button className="cta-button"><Link to='/listings'>Shop our products</Link></button>
             </div>
