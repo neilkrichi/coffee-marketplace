@@ -19,6 +19,7 @@ export default class ListingPage extends Component {
       coffeeData: [],
       upvotedCoffees: [],
       isClicked: false
+      loading: false;
     };
   }
 
@@ -30,18 +31,14 @@ export default class ListingPage extends Component {
     return axios.get('https://cocoapi.herokuapp.com/coffees')
     .then((response) => {
       this.setState({coffeeData: response.data});
-      console.log(response);
     })
     .catch((error) => {
-      console.log(error);
     });
   }
 
   upvoteCoffee(id){
     return axios.post('https://cocoapi.herokuapp.com/upvote/coffee' , {id: id})
     .then((response) => {
-      // this.setState({updatedVotes: response.data.theCoffee.votes});
-      // console.log(response.data.theCoffee.votes);
       const replaceCoffee = (coffees, refreshedCoffee) => {
         return coffees.map((coffee) => {
           if(coffee._id === refreshedCoffee._id){
