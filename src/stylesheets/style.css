@@ -241,8 +241,7 @@ img.hide {
 
 
 .listings .row {
-  margin: 10px 0px;
-  padding: 10px;
+  padding: 10px 0px;
 }
 
 
@@ -256,13 +255,6 @@ img.hide {
     border-width: 1px;
 }
 
-/* .coffee-listing img {
-  max-height: 70%;
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  padding: 10px;
-} */
 
 .img .choose-img:hover {
   background-color: #4A1C0D;
