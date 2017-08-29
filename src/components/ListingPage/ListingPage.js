@@ -18,8 +18,8 @@ export default class ListingPage extends Component {
     this.state = {
       coffeeData: [],
       upvotedCoffees: [],
-      isClicked: false
-      loading: false;
+      isClicked: false,
+      loading: false
     };
   }
 
@@ -76,6 +76,26 @@ export default class ListingPage extends Component {
     }
 
   render() {
+    if (this.state.coffeeData.length === 0) {
+      return (
+        <div>
+          <div className='listings'>
+            <Navibar />
+            <div className='container-fluid'>
+              <h1>
+                Listings
+              </h1>
+              <hr />
+              <Link to='/sell'><button className="add-listing">Add a product</button></Link>
+              <div className='grey-box'>
+                <h1>Loading coffees...</h1>
+              </div>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      )
+    }
     return (
       <div>
         <div className='listings'>
