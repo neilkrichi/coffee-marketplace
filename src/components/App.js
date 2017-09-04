@@ -27,7 +27,7 @@ class App extends Component {
               <h3 className="app-intro">
                 Your favorite <TypeOut words={words} typeSpeed={100} /> <strong> Coffee </strong> marketplace
               </h3> <br/>
-            <button className="cta-button"><Link to='/listings'>Shop our products</Link></button>
+            <button className="cta-button"><Link to='/listings'>Shop all products</Link></button>
             </div>
             </div>
           </div>
