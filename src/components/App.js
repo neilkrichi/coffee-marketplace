@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import '../../stylesheets/style.css';
+import '../stylesheets/style.css';
 import { Link } from 'react-router';
-import SearchBar from '../../containers/SearchBar/SearchBar.js';
-import Navibar from '../../containers/Navibar/Navibar.js';
-import Footer from '../../containers/Footer/Footer.js';
+import SearchBar from './SearchBar.js';
+import Navibar from './Navibar.js';
+import Footer from './Footer.js';
 import FontAwesome from 'react-fontawesome';
 import TypeOut from 'react-typeout';
 
-const words = ['free-trade', 'organic', 'GMO-free', 'gluten-free', 'lactose-free', 'vegan', 'crossfit'];
+const words = ['fair-trade', 'organic', 'GMO-free', 'vegan'];
 
 class App extends Component {
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
               <img className="app-logo" src="../favicon.png" />
               <h1>Welcome to Roastr</h1> <br/>
               <h3 className="app-intro">
-                Your favorite <TypeOut words={words} typeSpeed={100} /> <strong> <span role='img'>☕️</span> Coffee <span role='img'>☕️</span>  </strong> marketplace
+                Your favorite <TypeOut words={words} typeSpeed={100} /> <strong> Coffee </strong> marketplace
               </h3> <br/>
             <button className="cta-button"><Link to='/listings'>Shop our products</Link></button>
             </div>

@@ -1,7 +1,6 @@
 // src/components/NotFound/index.js
 import React, { Component } from 'react';
-import Navibar from '../../containers/Navibar/Navibar.js';
-import '../../stylesheets/style.css';
+import Navibar from './Navibar.js';
 
 export default class NotFound extends Component {
   // static propTypes = {}

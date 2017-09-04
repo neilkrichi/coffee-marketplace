@@ -2,7 +2,6 @@ import React from 'react';
 import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import filepickerLibrary from 'filepicker-js';
-import '../../stylesheets/style.css';
 import { browserHistory, Link } from 'react-router';
 import {Row, Col} from 'react-bootstrap';
 

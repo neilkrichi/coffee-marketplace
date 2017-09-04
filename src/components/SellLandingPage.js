@@ -2,10 +2,9 @@
 import React, { Component } from 'react';
 import {Row, Col} from 'react-bootstrap';
 
-import Navibar from '../../containers/Navibar/Navibar.js';
-import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
-import Footer from '../../containers/Footer/Footer.js';
-import '../../stylesheets/style.css';
+import Navibar from './Navibar.js';
+import CreateCoffeeForm from './CreateCoffeeForm.js';
+import Footer from './Footer.js';
 
 
 

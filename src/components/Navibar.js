@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-import '../../stylesheets/style.css';
-
 
 export default class Navibar extends Component {
 

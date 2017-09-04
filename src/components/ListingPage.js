@@ -5,11 +5,10 @@ import { Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router';
 
-import CoffeeListing from '../../containers/CoffeeListing/CoffeeListing.js';
-import CreateCoffeeForm from '../../containers/CreateCoffeeForm/CreateCoffeeForm.js';
-import Navibar from '../../containers/Navibar/Navibar.js';
-import Footer from '../../containers/Footer/Footer.js'
-import '../../stylesheets/style.css';
+import CoffeeListing from './CoffeeListing.js';
+import CreateCoffeeForm from './CreateCoffeeForm.js';
+import Navibar from './Navibar.js';
+import Footer from './Footer.js'
 
 
 export default class ListingPage extends Component {

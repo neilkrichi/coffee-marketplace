@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import axios from 'axios';
 import FontAwesome from 'react-fontawesome';
-import '../../stylesheets/style.css';
 
 export default class CoffeeListing extends Component {
   constructor(props) {

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App/App.js';
-import Blog from './components/Blog/Blog.js';
-import NotFound from './components/NotFound/NotFound.js';
-import SignUpPage from './components/SignUpPage/SignUpPage.js';
-import LoginPage from './components/LoginPage/LoginPage.js';
-import SellLandingPage from './components/SellLandingPage/SellLandingPage.js';
-import ListingPage from './components/ListingPage/ListingPage.js'
+import App from './components/App.js';
+import Blog from './components/Blog.js';
+import NotFound from './components/NotFound.js';
+import SignUpPage from './components/SignUpPage.js';
+import LoginPage from './components/LoginPage.js';
+import SellLandingPage from './components/SellLandingPage.js';
+import ListingPage from './components/ListingPage.js'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { Router, Route, browserHistory } from 'react-router';
