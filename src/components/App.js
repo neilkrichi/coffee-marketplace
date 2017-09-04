@@ -16,10 +16,10 @@ class App extends Component {
         <div className='app'>
           <Navibar />
           <div className="app-header">
-            <video className='bg-video' autoPlay muted loop>
+            <video className='bg-video hide-xs' autoPlay muted loop>
               <source src='/videos/bgvideo.mp4' type="video/mp4"></source>
             </video>
-            <div className='bg-video-overlay'>
+            <div className='bg-video-overlay hide-xs'>
             </div>
             <div className="intro-text">
               <img className="app-logo" src="../favicon.png" />
