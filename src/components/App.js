@@ -9,7 +9,7 @@ import TypeOut from 'react-typeout';
 
 const words = ['fair-trade', 'organic', 'GMO-free', 'vegan'];
 
-class App extends Component {
+export default class Home extends Component {
   render() {
     return (
       <div>
@@ -22,7 +22,6 @@ class App extends Component {
             <div className='bg-video-overlay hide-xs'>
             </div>
             <div className="intro-text">
-              <img className="app-logo" src="../favicon.png" />
               <h1>Welcome to Roastr</h1> <br/>
               <h3 className="app-intro">
                 Your favorite <TypeOut words={words} typeSpeed={100} /> <strong> Coffee </strong> marketplace
@@ -36,5 +35,3 @@ class App extends Component {
       );
     }
   }
-
-  export default App;

@@ -18,6 +18,55 @@
   font-size: 48px;
 }
 
+.app .App-header {
+  background-color: transparent;
+}
+
+.App-header {
+    background-color: #331309;
+    padding: 10px 80px;
+    color: #fff;
+    height: 80px;
+    text-align: center;
+}
+
+ .logo-img {
+    display: inline-block;
+    float: left;
+}
+
+ .site-map {
+    display: inline-block;
+    float: right;
+}
+
+.topnav h2 {
+  margin: 0px;
+  padding: 30px 0px;
+}
+
+.topnav ul {
+    margin: 0;
+    padding: 30px 0;
+    list-style-type: none;
+}
+
+.topnav ul li {
+  display: inline;
+  padding: 0px 15px;
+  margin: 0px;
+  font-size: 1.1em;
+}
+
+.topnav ul li:hover {
+  text-decoration: underline;
+}
+
+.topnav a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .app-header {
   color: white;
   height: 700px;
@@ -106,6 +155,7 @@ z-index: -100;
 
 .app a {
   color: white;
+  text-decoration: none;
 }
 
 .cta-button {
@@ -131,15 +181,6 @@ z-index: -100;
 .sign-in {
   border: 2px solid;
   border-radius: 3px;
-}
-
-.navibar a {
-  color: white;
-}
-
-.navibar a:hover {
-  color: white;
-  text-decoration: underline;
 }
 
 

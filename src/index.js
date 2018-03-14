@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App.js';
+import Home from './components/App.js';
 import Blog from './components/Blog.js';
 import NotFound from './components/NotFound.js';
 import SignUpPage from './components/SignUpPage.js';
@@ -14,8 +14,8 @@ import { Router, Route, browserHistory } from 'react-router';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/" component={App}/>
-    <Route path="/home" component={App}/>
+    <Route path="/" component={Home}/>
+    <Route path="/home" component={Home}/>
     <Route path="/blog" component={Blog}/>
     <Route path="/error" component={NotFound}/>
     <Route path="/signup" component={SignUpPage}/>
