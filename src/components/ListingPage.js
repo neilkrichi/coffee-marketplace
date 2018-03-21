@@ -1,7 +1,6 @@
 // src/components/About/index.js
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
-import { Row, Col, Image } from 'react-bootstrap';
 import axios from 'axios';
 import { Link } from 'react-router';
 
@@ -78,15 +77,15 @@ export default class ListingPage extends Component {
     if (this.state.coffeeData.length === 0) {
       return (
         <div>
-          <div className='listings'>
+          <div className=''>
             <Navibar />
-            <div className='container-fluid'>
+            <div className='listing-page'>
               <h1>
                 Listings
               </h1>
               <hr />
               <Link to='/sell'><button className="add-listing">Add a product</button></Link>
-              <div className='grey-box'>
+              <div className='listings'>
                 <h1>Loading coffees...</h1>
               </div>
             </div>
@@ -97,27 +96,25 @@ export default class ListingPage extends Component {
     }
     return (
       <div>
-        <div className='listings'>
+        <div className=''>
           <Navibar />
-          <div className='container-fluid'>
+          <div className='listing-page'>
             <h1>
               Listings
             </h1>
             <hr />
             <Link to='/sell'><button className="add-listing">Add a product</button></Link>
-            <div className='grey-box'>
-              <Row>
+            <div className='listings'>
                 {this.state.coffeeData.map((coffee)=>{
                   return(
-                    <Col md={4} sm={6} xs={12}>
+                    <div className='single-listing'>
                       <CoffeeListing
                         coffee={coffee}
                         upvoteCoffee= {this.upvoteCoffeeWrapper.bind(this)}
                         />
-                    </Col>
+                    </div>
                   )
                 })}
-              </Row>
             </div>
           </div>
         </div>

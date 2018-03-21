@@ -24,7 +24,7 @@
 
 .App-header {
     background-color: #331309;
-    padding: 10px 80px;
+    padding: 10px 50px;
     color: #fff;
     height: 80px;
     text-align: center;
@@ -273,10 +273,14 @@ img.hide {
   display: none;
 }
 
+.listing-page {
+  padding: 10px 50px;
+}
+
 .coffee-listing {
   border: 1px solid black;
   margin: 10px;
-  height: 350px;
+  height: 300px;
 }
 
 .coffee-listing .website {
@@ -339,7 +343,6 @@ img.hide {
 
   .footer {
     text-align: center;
-    height: 80px !important;
   }
 
   .xs-only {
@@ -363,11 +366,6 @@ img.hide {
     text-align: center;
   }
 
-}
-
-
-.listings .row {
-  padding: 10px 0px;
 }
 
 
@@ -443,20 +441,30 @@ img.hide {
   padding: 16px 32px;
 }
 
-.grey-box {
+.listings {
   padding: 15px 30px;
   background-color: white;
   border: 1px solid #f5f5f5;
   box-shadow: 2px 2px 1px #eee;
   margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.single-listing {
+  padding-bottom: 10px;
 }
 
 
-
 .footer {
-  height: 60px;
   background-color: #1B1A1A;
   color: white;
   margin: auto;
-  padding: 20px;
+  padding: 30px 20px;
+}
+
+.right-footer-text {
+  padding-bottom: 5px;
 }

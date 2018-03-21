@@ -19,7 +19,7 @@ export default class CoffeeListing extends Component {
       <div className='coffee'>
       <div className='coffee-listing'>
         <img className="image" alt="Listing" src={this.props.coffee.img}/>
-        <div className='middle'>
+      {/*  <div className='middle'>
           <div className='text'>
           <h2>{this.props.coffee.name}</h2>
           <h4>{this.props.coffee.tones}</h4>
@@ -28,6 +28,7 @@ export default class CoffeeListing extends Component {
           <a href={this.props.coffee.url} target="_blank" className='website cta-button'>Get yours here</a>
           </div>
         </div>
+        */}
       </div>
       <span type='button' className=' pull-right'>
          {this.props.coffee.votes} <FontAwesome name='heart-o' size='1x'/>
