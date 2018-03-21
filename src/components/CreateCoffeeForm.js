@@ -104,7 +104,7 @@ export default class CreateCoffeeForm extends React.Component {
                 <input type="text"
                   name='name'
                   value={this.state.name}
-                  placeholder="e.g. Kenyan Dark Roast whatever"
+                  placeholder="e.g. Kenyan Dark Roast"
                   onChange={this.handleInputChange}
                   />
               </div>

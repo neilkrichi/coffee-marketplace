@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navibar from './Navibar.js';
+import Footer from './Footer.js';
 
 export default class SignUpPage extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class SignUpPage extends Component {
   }
 
   handleSubmit(event) {
-    alert('Nigga we made it! Here are your credentials ' + this.state.email + " " + this.state.password);
+    alert('Nice! Here are your credentials ' + this.state.email + " " + this.state.password);
     event.preventDefault();
   }
 
@@ -70,7 +71,7 @@ export default class SignUpPage extends Component {
     return (
       <div className='signup'>
         <Navibar />
-        <div className='container'>
+        <div className='page-container'>
           <h1>
             Sign up
           </h1>
@@ -110,6 +111,7 @@ export default class SignUpPage extends Component {
             <input type="submit" onClick={this.handleSubmit} />
           </form>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -57,7 +57,7 @@ export default class LoginPage extends Component {
     return (
       <div className='login'>
         <Navibar />
-        <div className='container'>
+        <div className='page-container'>
           <h1>
             Log in
           </h1>

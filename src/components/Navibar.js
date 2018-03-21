@@ -64,6 +64,7 @@ export default class Navibar extends Component {
             <ul className='navbar-list'>
               <Link to='/listings'><li>Discover</li></Link>
               <Link to='/sell'><li>Sell</li></Link>
+              <Link to='/signup'><li>Sign Up</li></Link>
             </ul>
           </div>
         </div>

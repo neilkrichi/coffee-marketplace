@@ -79,7 +79,7 @@ export default class ListingPage extends Component {
         <div>
           <div className=''>
             <Navibar />
-            <div className='listing-page'>
+            <div className='page-container'>
               <h1>
                 Listings
               </h1>
@@ -98,7 +98,7 @@ export default class ListingPage extends Component {
       <div>
         <div className=''>
           <Navibar />
-          <div className='listing-page'>
+          <div className='page-container'>
             <h1>
               Listings
             </h1>

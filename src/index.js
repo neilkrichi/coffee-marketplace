@@ -6,7 +6,7 @@ import Blog from './components/Blog.js';
 import NotFound from './components/NotFound.js';
 import SignUpPage from './components/SignUpPage.js';
 import LoginPage from './components/LoginPage.js';
-import SellLandingPage from './components/SellLandingPage.js';
+import SellingPage from './components/SellingPage.js';
 import ListingPage from './components/ListingPage.js'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
@@ -20,7 +20,7 @@ ReactDOM.render((
     <Route path="/error" component={NotFound}/>
     <Route path="/signup" component={SignUpPage}/>
     <Route path="/login" component={LoginPage}/>
-    <Route path="/sell" component={SellLandingPage}/>
+    <Route path="/sell" component={SellingPage}/>
     <Route path="/listings" component={ListingPage}/>
   </Router>
 ), document.getElementById('root'))

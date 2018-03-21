@@ -8,14 +8,14 @@ import Footer from './Footer.js';
 
 
 
-export default class SellLandingPage extends Component {
+export default class SellingPage extends Component {
 
 
   render() {
     return (
-      <div className='sell'>
+      <div className=''>
         <Navibar />
-        <div className='container-fluid'>
+        <div className='page-container'>
           <h1>
             Sell on Roastr
           </h1>

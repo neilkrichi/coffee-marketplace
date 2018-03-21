@@ -11,7 +11,7 @@ export default class NotFound extends Component {
     return (
       <div className='notfound'>
         <Navibar />
-        <div className='container'>
+        <div className='page-container'>
         <h1>
           404 <small>Not Found 😭</small>
         </h1>
