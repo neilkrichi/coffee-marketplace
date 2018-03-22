@@ -58,11 +58,8 @@ export default class ListingPage extends Component {
   }
 
   upvoteCoffeeWrapper(id){
-      // if the id of the coffee we're trying to upvote doesn't exist in the upvotedCoffees array
     	if(this.state.upvotedCoffees.indexOf(id) === -1){
-        // upvote the coffee
     		this.upvoteCoffee(id)
-        // add the id of the coffee we're trying to upvote to the upvotedCoffees array
         let upvotedCoffees = this.state.upvotedCoffees
         upvotedCoffees.push(id)
     		this.setState({
