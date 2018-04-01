@@ -51,7 +51,7 @@ export default class SignUpPage extends Component {
     }else if (this.getValidationState() === 'warning') {
       return (<span>Not that great</span>)
     }else if (this.getValidationState() === 'error') {
-      return (<span>Sucks dude</span>)
+      return (<span>Too short</span>)
     }
   }
 
@@ -94,7 +94,7 @@ export default class SignUpPage extends Component {
               <input name='password'
                 type='password'
                 value={this.state.password}
-                placeholder="Anything but '123456' 😂"
+                placeholder="The more complex the better"
                 onChange={this.handleInputChange}/>
               {this.renderPasswordError()}
             </div>
