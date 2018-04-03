@@ -11,11 +11,9 @@ export default class SignUpPage extends Component {
       emailError: '',
       passwordConfirmation: ''
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.validateEmail = this.validateEmail.bind(this);
-
   }
 
   handleInputChange(event) {
