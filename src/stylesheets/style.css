@@ -321,6 +321,14 @@ img.hide {
     height: 400px;
   }
 
+  .App-header {
+    padding: 40px 50px;
+  }
+
+  .app-header {
+    padding-top: 130px;
+  }
+
   .image {
     padding-top: 25px;
   }
@@ -329,7 +337,7 @@ img.hide {
     width: 50%;
   }
 
-  .app-header h1 {
+  .App-header h1 {
     font-size: 40px;
   }
 
@@ -337,7 +345,7 @@ img.hide {
     font-size: 24px;
   }
 
-  .pull-right {
+  .footer .pull-right {
     float: none !important;
   }
 
@@ -364,6 +372,14 @@ img.hide {
     background-color: rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: center;
+  }
+
+  .topnav ul {
+    padding: 0px;
+  }
+
+  .topnav h2 {
+    padding: 0px 30px;
   }
 
 }

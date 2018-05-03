@@ -51,6 +51,9 @@ export default class Navibar extends Component {
     return (
       <div className='topnav'>
         <div className='App-header xs-only'>
+          <div className='logo-img'>
+            <Link to='/home'><h2>Roastr</h2></Link>
+          </div>
           <FontAwesome onClick={this.togglePopup.bind(this)} className="fa pull-right burger-menu" name={this.renderBurgerIcon()} size='2x' />
         </div>
         <div className='xs-only'>
